@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio Subhajit Ojha</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+
+    <div class="hero-container">
+        <button class="theme-toggle" id="toggleTheme">
+            <i id="toggleIcon" class="fa-regular fa-moon"></i>
+        </button>
+
+        <div class="avatar-wrapper">
+            <img src="/profile.jpg" class="avatar" />
+        </div>
+
+        <div class="hero-info">
+        <div class="name">Subhajit Ojha</div>
+        <div id="typing" class="typing"></div>
+
+        <button class="download-btn" onclick="window.location.href='resume.pdf'">
+            Download Resume
+        </button>
+
+        <div class="social-row">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-hackerrank"></i></a>
+        </div>
+        </div>
+
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

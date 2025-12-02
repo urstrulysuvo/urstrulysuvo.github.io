@@ -1,0 +1,195 @@
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background:#fff;
+  overflow:hidden;
+  transition:0.4s ease;
+}
+.dark { background:#000; }
+
+/* CANVAS */
+canvas {
+  position:fixed;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  z-index:-1;
+}
+
+/* HERO CARD */
+.hero-container {
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%, -50%);
+  width:auto;
+
+  padding:25px;
+  border-radius:20px;
+
+  background:rgba(255,255,255,0.13);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(0,0,0,0.20);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+
+  animation:fadeIn 1.2s ease;
+}
+
+.dark .hero-container {
+  background:rgba(0,0,0,0.18);
+  border:1px solid rgba(255,255,255,0.25);
+}
+
+/* Portrait mode */
+/* @media (orientation:portrait) {
+  .hero-container {
+    width:90%;
+  }
+} */
+
+/* Landscape mode */
+@media (orientation:landscape) and (min-width:768px) {
+  .hero-container {
+    /* height:90%;
+    width:auto;
+    max-width:1100px; */
+
+    flex-direction:row;
+    gap:40px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform:translate(-50%, -60%); }
+  to { opacity:1; transform:translate(-50%, -50%); }
+}
+
+/* AVATAR WITH GRADIENT BORDER */
+.avatar-wrapper {
+  width:150px; height:150px;
+  border-radius:50%;
+  padding:5px;
+
+  border:4px solid transparent;
+  background:linear-gradient(45deg, #000, #666, #fff, #333);
+  background-size:400% 400%;
+  animation:spinBorder 10s linear infinite;
+}
+@keyframes spinBorder {
+  0% { background-position:25% 25%; }
+  25% { background-position:25% 75%; }
+  50% { background-position:75% 75%; }
+  75% { background-position:75% 25%; }
+  100% { background-position:25% 25%; }
+}
+
+.avatar {
+  width:100%; height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* TEXT */
+.hero-info {
+  text-align:center;
+  max-width:480px;
+}
+@media (orientation:landscape) and (min-width:768px) {
+  .hero-info { text-align:left; }
+}
+
+.name {
+  font-size:28px;
+  font-weight:bold;
+  color:#111;
+}
+.dark .name { color:#fff; }
+
+.typing {
+  font-size:17px;
+  min-height:24px;
+  margin-top:6px;
+  color:#333;
+}
+.dark .typing { color:#ddd; }
+
+/* BUTTON */
+.download-btn {
+  padding:10px 22px;
+  background:rgba(0,0,0,0.08);
+  color:#000;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  margin-top:14px;
+  transition:0.25s;
+}
+.download-btn:hover {
+  transform:scale(1.06);
+}
+.dark .download-btn { background:rgba(255,255,255,0.12); color:#fff; }
+
+/* SOCIAL ICONS */
+.social-row {
+  display:flex;
+  gap:15px;
+  margin-top:16px;
+}
+.social-row a {
+  padding:8px;
+  border-radius:50%;  
+  text-decoration: none;
+  background:rgba(0,0,0,0.08);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:0.25s;
+}
+
+.social-row a:visited,
+.social-row a:hover,
+.social-row a:active {
+  text-decoration: none !important;
+}
+
+.social-row i {
+  font-size:22px;
+  color: black;         /* Light mode */
+}
+
+.dark .social-row i {
+  color:white;         /* Dark mode */
+}
+
+.dark .social-row a {
+  background:rgba(255,255,255,0.12);
+}
+
+.social-row a:hover {
+  transform:scale(1.15);
+  box-shadow:0 0 10px #aaa;
+}
+
+/* DARK MODE TOGGLE */
+.theme-toggle {
+  position:fixed;
+  top:18px; right:18px;
+  font-size: 22px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  border:none;
+  background:rgba(255,255,255,0.08);
+  color:black;
+  
+  border-radius:50%;
+  cursor:pointer;
+  z-index: 20;
+  transition:0.3s;
+}
+.theme-toggle:hover { transform:scale(1.1); }
+.dark .theme-toggle { background:rgba(0,0,0,0.12); color:white; }
