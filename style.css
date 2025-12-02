@@ -183,7 +183,7 @@ canvas {
   width: 36px;
   height: 36px;
   border:none;
-  background:rgba(0,0,0,0.08);
+  background:rgba(0,0,0,0.92);
   color:black;
   
   border-radius:50%;
@@ -192,4 +192,4 @@ canvas {
   transition:0.3s;
 }
 .theme-toggle:hover { transform:scale(1.1); }
-.dark .theme-toggle { background:rgba(255,255,255,0.12); color:white; }
+.dark .theme-toggle { background:rgba(255,255,255,0.88); color:white; }
