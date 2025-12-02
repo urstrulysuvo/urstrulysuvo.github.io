@@ -188,7 +188,6 @@ canvas {
   
   border-radius:50%;
   cursor:pointer;
-  z-index: 20;
   transition:0.3s;
 }
 .theme-toggle:hover { transform:scale(1.1); }
