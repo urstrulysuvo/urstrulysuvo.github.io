@@ -140,6 +140,7 @@ canvas {
   margin-top:16px;
 }
 .social-row a {
+  aspect-ratio: 1,
   padding:8px;
   border-radius:50%;  
   text-decoration: none;
