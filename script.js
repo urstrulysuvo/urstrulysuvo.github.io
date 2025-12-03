@@ -154,7 +154,7 @@ function makeParticle(){
   };
 }
 
-let parts = Array.from({length:100}, makeParticle);
+let parts = Array.from({length:120}, makeParticle);
 let last = 0;
 
 function loop(t){
