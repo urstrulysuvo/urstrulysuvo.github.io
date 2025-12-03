@@ -93,7 +93,7 @@ function drawBg() {
 
   drops.forEach((drop, i) => {
     const x = i * fontSize;
-    const trail = 7 + Math.floor(Math.random() * 6);
+    const trail = 5 + Math.floor(Math.random() * 6);
 
     for (let t = 0; t < trail; t++) {
       const yPos = drop.y - t * fontSize * drop.direction;
