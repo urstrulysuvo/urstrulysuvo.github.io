@@ -93,7 +93,7 @@ function drawBg() {
     for (let t = 0; t < trail; t++) {
       const yPos = drop.y - t * fontSize * drop.direction;
       if (yPos < -fontSize || yPos > canvas.height) continue;
-      const alpha = 1 - t / (trail + 1);
+      lets alpha = 1 - t / (trail + 1);
 
       ctx.fillStyle = isDark
         ? `rgba(255,255,255,${alpha})`
