@@ -88,7 +88,7 @@ function resizeBg() {
 
 function drawBg() {
   const isDark = document.body.classList.contains("dark");
-  ctx.fillStyle = isDark ? "#000" : "##fff";
+  ctx.fillStyle = isDark ? "#000" : "#fff";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   drops.forEach((drop, i) => {
