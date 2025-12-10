@@ -101,7 +101,7 @@ function drawBg() {
       let alpha = 1 - t / (trail + 1);
 
       ctx.fillStyle = isDark
-        ? `rgba(255,255,255,${alpha})`
+        ? `rgba(235,235,235,${alpha})`
         : `rgba(20,20,20,${alpha})`;
 
       ctx.fillText(charSet[Math.random() < 0.5 ? 0 : 1], x, yPos);
