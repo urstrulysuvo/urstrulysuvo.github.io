@@ -436,12 +436,11 @@ canvas {
   height: 5vmin;
   border:none;
   background:none;
-  color:black;
+  color:#888;
   cursor:pointer;
   transition:0.3s;
 }
 .theme-toggle:hover { transform:scale(1.1); }
-.dark .theme-toggle { color:white; }
 
 /* HOME / PORT CARD */
 .port-card {
