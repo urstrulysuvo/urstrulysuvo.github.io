@@ -1,40 +1,64 @@
 /* RESET */
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Disable scrolling */
+html, body {
+  height: 100%;
+  overflow: hidden;   /* 🔥 main fix */
+}
+
+/* Hide scrollbar (Chrome, Edge, Safari) */
+body::-webkit-scrollbar {
+  display: none;
+}
 
 body {
-  font-family: Arial, sans-serif;
-  background:#fff;
-  overflow:hidden;
-  transition:0.4s ease;
+  font-family: "Inter", sans-serif;
+  background: #0f1a22;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-.dark { background:#000; }
+
+body.lock-scroll {
+  overflow: hidden;
+}
+
 
 /* CANVAS */
 canvas {
   position:fixed;
   top:0; left:0;
-  width:100vw; height:100vh;
+  width:100vw; 
+  height:100vh;
   z-index:-1;
 }
 
 /* HERO CARD */
 .hero-container {
-  position:absolute;
-  top:50%; left:50%;
+  position:fixed;
+  top:50%; 
+  left:50%;
   transform:translate(-50%, -50%);
-  width:auto;
 
-  padding:25px;
-  border-radius:20px;
+  max-width: 70vw;
+  max-height: 70vh;
+
+  padding: calc(2 * 1cqmin);
+  border-radius: calc(4 * 1cqmin);
 
   background:rgba(255,255,255,0.13);
   backdrop-filter:blur(8px);
   border:1px solid rgba(0,0,0,0.20);
 
-  display:flex;
-  flex-direction:column;
+  display:table-column;
   align-items:center;
-  gap:20px;
+  gap:calc(2 * 1cqmin);
 
   animation:fadeIn 1.2s ease;
 }
@@ -44,22 +68,145 @@ canvas {
   border:1px solid rgba(255,255,255,0.25);
 }
 
-/* Portrait mode */
-/* @media (orientation:portrait) {
-  .hero-container {
-    width:90%;
+/* NAVBAR */
+.navbar {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+  align-items: center;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+}
+
+.nav-link i {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #ff6b57;
+}
+
+/* PAGES */
+.page {
+  position: absolute;
+  inset: 80px 0 0 0;  /*  below navbar */
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* visible page */
+.page.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* fade out state */
+.page.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* BUTTON */
+.download-btn {
+  padding:10px 22px;
+  background:rgba(0,0,0,0.08);
+  color:#000;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  margin-top:14px;
+  transition:0.25s;
+}
+.download-btn:hover {
+  transform:scale(1.06);
+}
+.dark .download-btn { 
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+}
+
+/* MOBILE
+@media (max-width: 768px) {
+  .navbar {
+    gap: 20px;
+  }
+
+  .page {
+    padding: 60px 25px;
   }
 } */
 
+
 /* Landscape mode */
-@media (orientation:landscape) and (min-width:768px) {
+/* @media (orientation:landscape) and (min-width:768px) {
   .hero-container {
-    /* height:90%;
+    height:90%;
     width:auto;
-    max-width:1100px; */
+    max-width:1100px; 
 
     flex-direction:row;
     gap:40px;
+  }
+} */
+
+@media (max-aspect-ratio: 2/3) {
+  .hero-container {
+    aspect-ratio: 2/3; 
+    min-width: 70vw; 
+    height: auto;
+  }
+}
+@media (min-aspect-ratio: 2/3) and (max-aspect-ratio: 4/5) {
+  .hero-container {
+    aspect-ratio: 2/3;
+    width: auto;
+    min-height: 70vh; 
+  }
+}
+
+/* Viewport aspect ratio between 0.8 and 1.5 */
+@media (min-aspect-ratio: 4/5) and (max-aspect-ratio: 7/5) {
+  .hero-container {
+    aspect-ratio: 7/5;
+    min-width: 70vw; 
+    height: auto; /* 1.25 */
+  }
+}
+
+@media (min-aspect-ratio: 7/5) and (max-aspect-ratio:3/2) {
+  .hero-container {
+    aspect-ratio: 7/5; /* 1.25 */
+    width: auto;
+    min-height: 70vh; 
+  }
+}
+
+/* Viewport aspect ratio ≥ 1.5 */
+@media (min-aspect-ratio: 3/2) and (max-aspect-ratio:9/5) {
+  .hero-container {
+    aspect-ratio: 9/5; /* 1.25 */
+    min-width: 70vw; 
+    height: auto;
+  }
+}
+@media (min-aspect-ratio: 9/5) {
+  .hero-container {
+    aspect-ratio: 9/5; /* 1.4 */
+    width: auto;
+    min-height: 70vh; 
   }
 }
 
@@ -192,3 +339,19 @@ canvas {
 }
 .theme-toggle:hover { transform:scale(1.1); }
 .dark .theme-toggle { background:rgba(255,255,255,0.12); color:white; }
+
+/* HOME / PORT CARD */
+.port-card {
+  position: relative;
+  top:50%; left:50%;
+  transform:translate(-50%, -50%);
+  width:auto; 
+
+  padding:25px;
+  display:flex;
+  flex-direction:colomn;
+  align-items:center;
+  gap:20px;
+
+  animation:fadeIn 1.2s ease;
+}
