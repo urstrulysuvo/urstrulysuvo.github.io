@@ -95,12 +95,13 @@ canvas {
 /* NAVBAR */
 .navbar {
   position: fixed;
+  padding: 0 8%;
   bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-
-  width: calc(100% - 32px);
-  height: calc(16 * 1cqmin);
+  max-width: 75vw;
+  max-height: 75vh;
+  aspect-ratio: 4/1;
 
   display: flex;
   justify-content: space-around;
@@ -112,11 +113,11 @@ canvas {
 .navbar::before {
   content: "";
   position: absolute;
-  left: 0px;
+  left: 5%;
   top: 0%;
   transform: translateY(-50%) scaleX(1);
 
-  width: calc(100%);
+  width: 90%;
   height: 0.5px;
   border-radius: 1px;
 
@@ -190,35 +191,14 @@ canvas {
   color:#fff;
 }
 
-/* MOBILE
-@media (max-width: 768px) {
-  .navbar {
-    gap: 20px;
-  }
-
-  .page {
-    padding: 60px 25px;
-  }
-} */
-
-
-/* Landscape mode */
-/* @media (orientation:landscape) and (min-width:768px) {
-  .hero-container {
-    height:90%;
-    width:auto;
-    max-width:1100px; 
-
-    flex-direction:row;
-    gap:40px;
-  }
-} */
-
 @media (max-aspect-ratio: 2/3) {
   .hero-container {
     aspect-ratio: 2/3; 
     min-width: 75vw; 
     height: auto;
+  }
+  .navbar {
+    width: 75vw; 
   }
 }
 @media (min-aspect-ratio: 2/3) and (max-aspect-ratio: 4/5) {
@@ -226,6 +206,9 @@ canvas {
     aspect-ratio: 2/3;
     width: auto;
     min-height: 75vh; 
+  }
+  .navbar {
+    width: 50vh; 
   }
 }
 
@@ -236,6 +219,10 @@ canvas {
     min-width: 75vw; 
     height: auto; /* 1.25 */
   }
+  .navbar {
+    height: calc((5/7)* 75vw); 
+    aspect-ratio: 1/5;
+  }
 }
 
 @media (min-aspect-ratio: 7/5) and (max-aspect-ratio:3/2) {
@@ -243,6 +230,10 @@ canvas {
     aspect-ratio: 7/5; /* 1.25 */
     width: auto;
     min-height: 75vh; 
+  }
+  .navbar {
+    height: 75vh; 
+    aspect-ratio: 1/5;
   }
 }
 
@@ -253,12 +244,20 @@ canvas {
     min-width: 75vw; 
     height: auto;
   }
+  .navbar {
+    height: calc((5/7)* 75vw); 
+    aspect-ratio: 1/5;
+  }
 }
 @media (min-aspect-ratio: 9/5) {
   .hero-container {
     aspect-ratio: 9/5; /* 1.4 */
     width: auto;
     min-height: 75vh; 
+  }
+  .navbar {
+    height: 75vh;
+    aspect-ratio: 1/5; 
   }
 }
 
@@ -403,6 +402,7 @@ canvas {
   color:#888;
   cursor:pointer;
   transition:0.3s;
+  z-index: 200;
 }
 .theme-toggle:hover { transform:scale(1.1); }
 
@@ -413,9 +413,8 @@ canvas {
   left: auto;
   transform: none;
 
-  aspect-ratio: 5 / 4;
   width: 100%;
-  height:auto ;
+  aspect-ratio: 5 / 4;
 
   display: flex;
   flex-direction: column;
@@ -429,21 +428,16 @@ canvas {
 @media (min-aspect-ratio: 4/5) {
   .navbar {
     position: fixed;
+    padding: 8% 0;
     right: 0;
-    top: 50%;
     left: auto;
-    bottom: auto;
+    top: 50%;
 
     transform: translateY(-50%);
 
-    width: calc(16 * 1cqmin);
-    height: calc(100% - 32px);
-
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    gap: calc(4 * 1cqmin);
   }
 
   .navbar::before {
@@ -455,9 +449,8 @@ canvas {
     transform: translateY(-50%);
 
     width: 0.5px;
-    height: calc(100% - 32px);
+    height: 90%;
 
-    background: #888;
     border-radius: 1px;
   }
 
@@ -471,8 +464,7 @@ canvas {
     transform: none;
 
     aspect-ratio: 1; /* 🔥 square */
-    width: 80%;
-    max-height: 100%;
+    max-height: calc(100%);
 
     display: flex;
     align-items: right;
