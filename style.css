@@ -262,41 +262,6 @@ canvas {
   }
 }
 
-@media (min-aspect-ratio: 4/5) {
-  .navbar {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    left: auto;
-    bottom: auto;
-
-    transform: translateY(-50%);
-
-    width: calc(16 * 1cqmin);
-    height: calc(100% - 32px);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    gap: calc(4 * 1cqmin);
-  }
-
-  .navbar::before {
-    content: "";
-    position: absolute;
-
-    left: 0;                 /* ONLY ONE SIDE */
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 0.5px;
-    height: calc(100% - 32px);
-
-    background: #888;
-    border-radius: 1px;
-  }
-}
 
 @keyframes fadeIn {
   from { opacity:0; transform:translate(-50%, -60%); }
@@ -342,9 +307,7 @@ canvas {
   text-align:center;
   /* max-width:480px; */
 }
-@media (orientation:landscape) and (min-width:768px) {
-  .hero-info { text-align:left; }
-}
+
 
 .name {
   font-size:28px;
@@ -383,6 +346,7 @@ canvas {
 /* SOCIAL ICONS */
 .social-row {
   display:flex;
+  justify-content: space-between;
   gap:2vmin;
   margin-top:2vmin;
 }
@@ -405,10 +369,10 @@ canvas {
 }
 
 .social-row i {
-  min-height: 4vmin;
-  min-width: 4vmin;
+  min-height: 6vmin;
+  min-width: 6vmin;
   align-content: center;
-  font-size: 4vmin; 
+  font-size: 5vmin; 
   color: black;         /* Light mode */
 }
 
@@ -444,17 +408,76 @@ canvas {
 
 /* HOME / PORT CARD */
 .port-card {
-  position: relative;
-  top:50%; left:50%;
-  transform:translate(-50%, -50%);
-  min-width:calc(70 * 1vmin);
+  position: fixed;
+  top: 0;
+  left: auto;
+  transform: none;
+
+  aspect-ratio: 5 / 4;
+  width: 100%;
+  height:auto ;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 4vmin;
+}
 
 
-  padding:calc(2 * 1cqmin);
-  display:flex;
-  flex-direction:colomn;
-  align-items:center;
-  gap:calc(4 * 1cqmin);
+@media (min-aspect-ratio: 4/5) {
+  .navbar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    left: auto;
+    bottom: auto;
 
-  animation:fadeIn 1.2s ease;
+    transform: translateY(-50%);
+
+    width: calc(16 * 1cqmin);
+    height: calc(100% - 32px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: calc(4 * 1cqmin);
+  }
+
+  .navbar::before {
+    content: "";
+    position: absolute;
+
+    left: 0;                 /* ONLY ONE SIDE */
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 0.5px;
+    height: calc(100% - 32px);
+
+    background: #888;
+    border-radius: 1px;
+  }
+
+  .port-card {
+    /* grid-column: 1 / 2;
+    grid-row: 1 / 2; */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
+
+    aspect-ratio: 1; /* 🔥 square */
+    width: 80%;
+    max-height: 100%;
+
+    display: flex;
+    align-items: right;
+    justify-content: right;
+
+    padding: 3vmin;
+  }
 }
