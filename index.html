@@ -1,45 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Portfolio Subhajit Ojha</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Subhajit Ojha</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <canvas id="c"></canvas>
+  <canvas id="c"></canvas>
 
-    <div class="hero-container">
-        <button class="theme-toggle" id="toggleTheme">
-            <i id="toggleIcon" class="fa-regular fa-moon"></i>
-        </button>
+  <div class="hero-container">
+    <button class="theme-toggle" id="toggleTheme">
+        <i id="toggleIcon" class="fa-regular fa-moon"></i>
+    </button>
 
-        <div class="avatar-wrapper">
-            <img src="/profile.jpg" class="avatar" />
-            
+    <!-- SECTIONS -->
+    <main>
+      <section id="profile" class="page active">
+        <div class="port-card">
+
+
+          <div class="avatar-wrapper">
+              <img src="/profile.jpg" class="avatar" />
+          </div>
+
+          <div class="hero-info">
+            <div class="name">Subhajit Ojha</div>
+            <div id="typing" class="typing"></div>
+
+            <button class="download-btn" onclick="window.location.href='resume.pdf'">
+                Download Resume
+            </button>
+
+            <div class="social-row">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-hackerrank"></i></a>
+            </div>
+          </div>
+
         </div>
+      </section>
 
-        <div class="hero-info">
-        <div class="name">Er. Subhajit Ojha</div>
-        <div id="typing" class="typing"></div>
+      <section id="skills" class="page">
+        <h1 class="reveal">🛠 Skills</h1>
+        <p class="reveal">HTML • CSS • JavaScript • Flutter</p>
+      </section>
 
-        <button class="download-btn" onclick="window.location.href='resume.pdf'">
-            Download Resume
-        </button>
+      <section id="projects" class="page">
+        <h1 class="reveal">📁 Projects</h1>
+        <p class="reveal">Portfolio • Mobile Apps • Web Apps</p>
+      </section>
 
-        <div class="social-row">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-x-twitter"></i></a>
-            <a href="#"><i class="fab fa-hackerrank"></i></a>
-        </div>
-        </div>
+    </main>
 
-    </div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <button class="nav-link active" onclick="showSection('profile', this)">
+        <i class="fa-solid fa-user"></i>
+      </button>
 
-    <script src="/script.js"></script>
+      <button class="nav-link" onclick="showSection('skills', this)">
+        <i class="fa-solid fa-code"></i>
+      </button>
+
+      <button class="nav-link" onclick="showSection('projects', this)">
+        <i class="fa-solid fa-folder-open"></i>
+      </button>
+    </nav>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script src="canvscript.js"></script>
+  
 </body>
 </html>
