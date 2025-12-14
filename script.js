@@ -16,6 +16,39 @@ toggle.onclick = () => {
 };
 
 
+/* TYPING EFFECT */
+const roles = [
+  "Frontend Developer",
+  "App Developer",
+  "Game Developer",
+  "Tech Enthusiast"
+];
+
+let i = 0, j = 0;
+const typing = document.getElementById("typing");
+
+function type() {
+  if (j < roles[i].length) {
+    typing.textContent = roles[i].substring(0, j + 1);
+    j++;
+    setTimeout(type, 120);
+  } else {
+    setTimeout(erase, 900);
+  }
+}
+
+function erase() {
+  if (j > 0) {
+    typing.textContent = roles[i].substring(0, j - 1);
+    j--;
+    setTimeout(erase, 60);
+  } else {
+    i = (i + 1) % roles.length;
+    setTimeout(type, 200);
+  }
+}
+type();
+
 
 /* PAGE SWITCHING */
 let currentPage = document.querySelector(".page.active");
@@ -61,38 +94,3 @@ function resetReveal() {
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
-
-
-/* TYPING EFFECT */
-const roles = [
-  "Frontend Developer",
-  "App Developer",
-  "Game Developer",
-  "Tech Enthusiast"
-];
-
-let i = 0, j = 0;
-const typing = document.getElementById("typing");
-
-function type() {
-  if (j < roles[i].length) {
-    typing.textContent = roles[i].substring(0, j + 1);
-    j++;
-    setTimeout(type, 120);
-  } else {
-    setTimeout(erase, 900);
-  }
-}
-
-function erase() {
-  if (j > 0) {
-    typing.textContent = roles[i].substring(0, j - 1);
-    j--;
-    setTimeout(erase, 60);
-  } else {
-    i = (i + 1) % roles.length;
-    setTimeout(type, 200);
-  }
-}
-type();
-
