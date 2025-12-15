@@ -269,9 +269,9 @@ canvas {
 
 /* AVATAR WITH GRADIENT BORDER */
 .avatar-wrapper {
-  width:27vmin;
-  height:27vmin;
-  border-radius:50%;
+  width:34vmin;
+  height: 34vmin;
+  border-radius:17vmin;
   padding:1vmin; 
 
   border:1vmin solid transparent;
@@ -295,9 +295,9 @@ canvas {
 }
 
 .avatar {
-  width:23vmin;
-  height:23vmin;
-  border-radius:50%;
+  width:30vmin;
+  aspect-ratio: 1/1;
+  border-radius:15vmin;
   object-fit:cover;
 }
 
