@@ -24,35 +24,35 @@
         <section id="profile" class="page active">
           <div class="port-card">
 
-            <div class="avatar-wrapper">
+            <div class="title" style="grid-area: box-1;">Profile Card</div>
+
+            <div class="avatar-wrapper" style="grid-area: box-2;">
               <img src="/profile.jpg" class="avatar" />
             </div>
 
-            <div class="hero-info">
-              <div class="greetings">
-                <div class="name">Subhajit Ojha</div>
-                <div id="typing" class="typing"></div>
-                <div class="info">
-                  A dedicated developer with a passion for clean code, modern design, and problem-solving. Always learning, always building.
-                </div>
-              </div>
-
-              <div class="card-btns">
-                <button class="download-btn" onclick="window.location.href='resume.pdf'">
-                  Download Resume
-                </button>
-
-                <div class="social-row">
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-facebook"></i></a>
-                  <a href="#"><i class="fab fa-github"></i></a>
-                  <a href="#"><i class="fab fa-x-twitter"></i></a>
-                  <a href="#"><i class="fab fa-hackerrank"></i></a>
-                </div>
-              </div>
+            <div class="greetings" style="grid-area: box-3;">
+              <div class="name">Subhajit Ojha</div>
+              <div id="typing" class="typing"></div>
             </div>
 
+            <div class="info" style="grid-area: box-4;">
+              A dedicated developer with a passion for clean code, modern design, and problem-solving. Always
+              learning, always building.
+            </div>
+            
+            <button class="download-btn" onclick="window.location.href='resume.pdf'" style="grid-area: box-5;">
+              Download Resume
+            </button>
+
+            <div class="social-row" style="grid-area: box-6;">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-hackerrank"></i></a>
+            </div>
           </div>
+
         </section>
 
         <section id="skills" class="page">
@@ -96,10 +96,9 @@
         </button>
 
       </nav>
+
     </div>
-
   </div>
-
   <script src="script.js"></script>
   <script src="canvscript.js"></script>
 
