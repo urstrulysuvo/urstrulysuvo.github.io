@@ -19,76 +19,84 @@
     </button>
 
     <!-- SECTIONS -->
-    <main>
-      <section id="profile" class="page active">
-        <div class="port-card">
+    <div class="hero-layout">
+      <main class="content-area">
+        <section id="profile" class="page active">
+          <div class="port-card">
 
-          <div class="avatar-wrapper">
-            <img src="/profile.jpg" class="avatar" />
-          </div>
-
-          <div class="hero-info">
-            <div class="name">Subhajit Ojha</div>
-            <div id="typing" class="typing"></div>
-
-            <button class="download-btn" onclick="window.location.href='resume.pdf'">
-              Download Resume
-            </button>
-
-            <div class="social-row">
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fab fa-x-twitter"></i></a>
-              <a href="#"><i class="fab fa-hackerrank"></i></a>
+            <div class="avatar-wrapper">
+              <img src="/profile.jpg" class="avatar" />
             </div>
+
+            <div class="hero-info">
+              <div class="greetings">
+                <div class="name">Subhajit Ojha</div>
+                <div id="typing" class="typing"></div>
+                <div class="info">
+                  A dedicated developer with a passion for clean code, modern design, and problem-solving. Always learning, always building.
+                </div>
+              </div>
+
+              <div class="card-btns">
+                <button class="download-btn" onclick="window.location.href='resume.pdf'">
+                  Download Resume
+                </button>
+
+                <div class="social-row">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                  <a href="#"><i class="fab fa-x-twitter"></i></a>
+                  <a href="#"><i class="fab fa-hackerrank"></i></a>
+                </div>
+              </div>
+            </div>
+
           </div>
+        </section>
 
-        </div>
-      </section>
+        <section id="skills" class="page">
+          <h1 class="reveal">🛠 Skills</h1>
+          <p class="reveal">HTML • CSS • JavaScript • Flutter</p>
+        </section>
 
-      <section id="skills" class="page">
-        <h1 class="reveal">🛠 Skills</h1>
-        <p class="reveal">HTML • CSS • JavaScript • Flutter</p>
-      </section>
+        <section id="projects" class="page">
+          <h1 class="reveal">📁 Projects</h1>
+          <p class="reveal">Portfolio • Mobile Apps • Web Apps</p>
+        </section>
 
-      <section id="projects" class="page">
-        <h1 class="reveal">📁 Projects</h1>
-        <p class="reveal">Portfolio • Mobile Apps • Web Apps</p>
-      </section>
+        <section id="stores" class="page">
+          <h1 class="reveal">📁 Projects</h1>
+          <p class="reveal">Portfolio • Mobile Apps • Web Apps</p>
+        </section>
 
-      <section id="stores" class="page">
-        <h1 class="reveal">📁 Projects</h1>
-        <p  class="reveal">Portfolio • Mobile Apps • Web Apps</p>
-      </section>
+        <section id="apps" class="page">
+          <h1 class="reveal">🚀 Published Apps</h1>
+          <p class="reveal">Apps available on Play Store / Web</p>
+        </section>
 
-      <section id="apps" class="page">
-        <h1  class="reveal">🚀 Published Apps</h1>
-        <p class="reveal">Apps available on Play Store / Web</p>
-      </section>
+      </main>
 
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <button class="nav-link active" onclick="showSection('profile', this)">
+          <i class="fa-solid fa-user"></i>
+        </button>
 
-    </main>
+        <button class="nav-link" onclick="showSection('skills', this)">
+          <i class="fa-solid fa-laptop-code"></i>
+        </button>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <button class="nav-link active" onclick="showSection('profile', this)">
-        <i class="fa-solid fa-user"></i>
-      </button>
+        <button class="nav-link" onclick="showSection('projects', this)">
+          <i class="fa-solid fa-folder-open"></i>
+        </button>
 
-      <button class="nav-link" onclick="showSection('skills', this)">
-        <i class="fa-solid fa-laptop-code"></i>
-      </button>
+        <button class="nav-link" onclick="showSection('apps', this)">
+          <i class="fa-solid fa-layer-group"></i>
+        </button>
 
-      <button class="nav-link" onclick="showSection('projects', this)">
-        <i class="fa-solid fa-folder-open"></i>
-      </button>
-
-      <button class="nav-link" onclick="showSection('apps', this)">
-        <i class="fa-solid fa-layer-group"></i>
-      </button>
-
-    </nav>
+      </nav>
+    </div>
 
   </div>
 
