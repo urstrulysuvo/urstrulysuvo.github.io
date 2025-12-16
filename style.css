@@ -169,6 +169,7 @@ canvas {
   background:rgba(0,0,0,0.08);
   color:#000;
   border:none;
+  width: 100%;
   border-radius:50%;
   cursor:pointer;
   transition:0.25s;
@@ -399,7 +400,7 @@ canvas {
     flex-direction: column;
     align-items: center;
   }
-
+.download-btn{flex: 1;}
   .navbar::before {
     left: 0;
     top: 50%;
