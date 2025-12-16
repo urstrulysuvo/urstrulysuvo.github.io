@@ -496,9 +496,9 @@ canvas {
     aspect-ratio: 8/5; 
     width: 120vh;
     height: auto;
-    padding: 6vh 12vh 12vh 12vh;
+    padding: 4vh 9vh 9vh 9vh;
     gap: 4vh;
-    grid-template-rows: 9vh 13.5vh 13.5vh 9vh;
+    grid-template-rows: 10vh 15vh 15vh 10vh;
   }
   .avatar {
     width: 38vh;
