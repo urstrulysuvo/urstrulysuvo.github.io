@@ -337,8 +337,8 @@ canvas {
 
   display: grid;
   gap: 2vw;
-  grid-template-columns: 63vw;
-  grid-template-rows: 8vw 24vw 12vw 12vw 12vw 12vw;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8vw 26vw 12vw 14vw 10vw 10vw;
   grid-template-areas:  "box-1"
                         "box-2"
                         "box-3"
