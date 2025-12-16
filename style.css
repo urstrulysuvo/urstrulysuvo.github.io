@@ -379,8 +379,8 @@ canvas {
   .port-card { 
     gap: 2.5vw;
     padding: 2vw 4vw 4vw 4vw;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10vw 10vw 10vw 10vw;
+    grid-template-columns: 5fr 7fr;
+    grid-template-rows: 6vw 14vw 10vw 10vw;
     grid-template-areas:  "box-2 box-1"
                           "box-2 box-3"
                           "box-4 box-4"
@@ -409,7 +409,7 @@ canvas {
   .port-card {
     gap: 3vw;
     padding: 2.5vw 5vw 5vw 5vw;
-    grid-template-columns: 3fr 2fr 3fr;
+    grid-template-columns: 3fr 1fr 4fr;
     grid-template-rows: 5vw 7.5vw 7.5vw 5vw;
     grid-template-areas:  "box-1 box-1 box-1"
                           "box-2 box-3 box-3"
