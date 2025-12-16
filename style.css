@@ -230,6 +230,11 @@ canvas {
 }
 .dark .name { color:#fff; }
 
+.info {
+  color: #111;
+}
+.dark .info { color:#fff; }
+
 .typing {
   font-size:17px;
   min-height:24px;
