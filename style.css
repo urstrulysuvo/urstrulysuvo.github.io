@@ -513,9 +513,6 @@ canvas {
     font-size: 5vh; 
   }
   .download-btn {
-    height: 8vh;
-  }
-  .toolbar {
-    gap: 4vh; 
+    height: 10vh;
   }
 }
