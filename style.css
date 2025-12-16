@@ -506,10 +506,17 @@ canvas {
     grid-template-rows: 10vh 15vh 15vh 10vh;
   }
   .avatar {
-    width: 38vh;
+    width: 24vh;
   }
   .avatar-wrapper {
     padding: 2vh;
+  }
+  .social-row i {
+    height: 6vh;
+    font-size: 4vh; 
+  }
+  .download-btn {
+    height: 6vh;
   }
   .toolbar {
     gap: 4vh; 
