@@ -352,15 +352,7 @@ canvas {
 .title {
   font-size: 4vmin;
   font-weight: bold;
-  color: #111;
-}
-.title ::after {
-  content: "";
-  display: block;
-  width: 20vmin;
-  height: 1vmin;
-  margin-top: 1vmin;
-  background: #ff6b57;
+  color: #ff6b57;
 }
 
 @media (min-aspect-ratio: 3/4) {
