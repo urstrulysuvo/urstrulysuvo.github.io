@@ -181,6 +181,39 @@ canvas {
   color:#fff;
 }
 
+/* Base styles */
+.toolbar {
+  display: flex;
+  gap: 12px;
+}
+
+/* Icon buttons in one row */
+.social-row {
+  display: flex;
+  gap: 8px;
+}
+
+/* -------- Portrait Mode -------- */
+@media (orientation: portrait) {
+  .toolbar {
+    flex-direction: column;   /* Two rows */
+    align-items: center;
+  }
+
+  .social-row {
+    justify-content: center;  /* Icons in one row */
+  }
+}
+
+/* -------- Landscape Mode -------- */
+@media (orientation: landscape) {
+  .toolbar {
+    flex-direction: row;      /* Single row */
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 
 @keyframes fadeIn {
   from { opacity:0; transform:translate(-50%, -60%); }
