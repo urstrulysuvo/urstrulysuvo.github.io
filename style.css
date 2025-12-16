@@ -328,7 +328,7 @@ canvas {
   width: 75vw;
 
   padding: 4vw 6vw;
-  aspect-ratio: 4/5;
+  aspect-ratio: 10 / 13;
 
   display: grid;
   gap: 2vw;
@@ -380,6 +380,7 @@ canvas {
   }
 
   .port-card { 
+    gap: 4vw;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 6.4vw 12.8vw 6.4vw 6.4vw;
     grid-template-areas:  "box-1 box-1 box-1"
@@ -408,6 +409,7 @@ canvas {
 
 @media (min-aspect-ratio: 13/10) {
   .port-card {
+    gap: 4vw;
     grid-template-columns: 3fr 2fr 3fr;
     grid-template-rows: 4vw 6vw 6vw 4vw;
     grid-template-areas:  "box-1 box-1 box-1"
