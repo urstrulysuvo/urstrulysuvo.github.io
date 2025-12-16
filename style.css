@@ -98,7 +98,7 @@ canvas {
   max-width: 75vw;
   max-height: 75vh;
   width: 75vw; 
-  aspect-ratio: 4/1;
+  aspect-ratio: 5/1;
 
   display: flex;
   justify-content: space-around;
@@ -117,13 +117,13 @@ canvas {
   height: 0.5px;
   border-radius: 1px;
 
-  background: rgba(0,0,0,0.08);
+  background: rgba(0,0,0,0.20);
   align-self: center;
   transition: transform 0.3s ease;
 }
 
 .dark .navbar::before {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.25);
 }
 
 .nav-link {
@@ -331,13 +331,13 @@ canvas {
   left: 0;
   width: 75vw;
 
-  padding: 6vmin;
+  padding: 4vw 6vw;
   aspect-ratio: 4/5;
 
   display: grid;
-  gap: 4vmin;
-  grid-template-columns: 16fr;
-  grid-template-rows: 2fr 6fr 3fr 3fr 3fr 3fr;
+  gap: 4vw;
+  grid-template-columns: 63vw;
+  grid-template-rows: 9vw 27vw 13vw 14vw 13vw 13vw;
   grid-template-areas:  "box-1"
                         "box-2"
                         "box-3"
@@ -345,8 +345,22 @@ canvas {
                         "box-5"
                         "box-6";
   align-items: center;
+  overflow: hidden;
 }
 
+.title {
+  font-size: 4vmin;
+  font-weight: bold;
+  color: #111;
+}
+.title ::after {
+  content: "";
+  display: block;
+  width: 20vmin;
+  height: 1vmin;
+  margin-top: 1vmin;
+  background: #ff6b57;
+}
 
 @media (min-aspect-ratio: 3/4) {
   .navbar {
@@ -370,12 +384,13 @@ canvas {
   }
 
   .port-card { 
-    grid-template-columns: 2fr 4fr;
-    grid-template-rows: 1fr 2fr 1fr 1fr;
-    grid-template-areas:  "box-1 box-1"
-                          "box-2 box-3"
-                          "box-4 box-4"
-                          "box-5 box-6";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 6.4vw 12.8vw 6.4vw 6.4vw;
+    grid-template-areas:  "box-1 box-1 box-1"
+                          "box-2 box-3 box-3"
+                          "box-4 box-4 box-4"
+                          "box-5 box-5 box-6";
+
   }
   .social-row a {
     padding: 0.5vw;
@@ -387,16 +402,22 @@ canvas {
   .download-btn {
     height: 5vw;
   }
+  .nav-link i {
+    font-size: 4vmin;
+  }
+  .nav-link {
+    font-size: 2.5vmin;
+  }
 }
 
 @media (min-aspect-ratio: 13/10) {
   .port-card {
-    grid-template-columns: 6fr 10fr;
-    grid-template-rows: 2fr 3fr 3fr 2fr;
-    grid-template-areas:  "box-1 box-1"
-                          "box-2 box-3"
-                          "box-2 box-4"
-                          "box-5 box-6";
+    grid-template-columns: 3fr 2fr 3fr;
+    grid-template-rows: 4vw 6vw 6vw 4vw;
+    grid-template-areas:  "box-1 box-1 box-1"
+                          "box-2 box-3 box-3"
+                          "box-2 box-4 box-4"
+                          "box-5 box-5 box-6";
   }
 }
 
@@ -475,6 +496,9 @@ canvas {
     aspect-ratio: 8/5; 
     width: 120vh;
     height: auto;
+    padding: 10vh;
+    gap: 6vh;
+    grid-template-rows: 7.5vh 11vh 11vh 7.5vh;
   }
   .avatar {
     width: 38vh;
