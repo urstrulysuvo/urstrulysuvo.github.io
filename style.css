@@ -165,12 +165,12 @@ canvas {
 
 /* BUTTON */
 .download-btn {
-  /* padding:10px 22px; */
+  height: 8vw;
+  width: 100%;
   background:rgba(0,0,0,0.08);
   color:#000;
   border:none;
-  width: 100%;
-  border-radius:50%;
+  border-radius:4vw;
   cursor:pointer;
   transition:0.25s;
 }
@@ -178,41 +178,8 @@ canvas {
   transform:scale(1.06);
 }
 .dark .download-btn { 
-  background:rgba(255,255,255,0.12);
-  color:#fff;
-}
-
-/* Base styles */
-.toolbar {
-  display: flex;
-  gap: 12px;
-}
-
-/* Icon buttons in one row */
-.social-row {
-  display: flex;
-  gap: 8px;
-}
-
-/* -------- Portrait Mode -------- */
-@media (orientation: portrait) {
-  .toolbar {
-    flex-direction: column;   /* Two rows */
-    align-items: center;
-  }
-
-  .social-row {
-    justify-content: center;  /* Icons in one row */
-  }
-}
-
-/* -------- Landscape Mode -------- */
-@media (orientation: landscape) {
-  .toolbar {
-    flex-direction: row;      /* Single row */
-    align-items: center;
-    justify-content: space-between;
-  }
+  background:rgba(255,255,255,0.12); 
+  color:#fff; 
 }
 
 
@@ -234,6 +201,7 @@ canvas {
   background-size:400% 400%;
   animation:spinBorder 10s linear infinite;
 }
+
 @keyframes spinBorder {
   0% { background-position:25% 25%; }
   25% { background-position:25% 75%; }
@@ -277,30 +245,21 @@ canvas {
 }
 .dark .typing { color:#ddd; }
 
-/* BUTTON */
-.download-btn {
-  height: 8vw;
-  background:rgba(0,0,0,0.08);
-  color:#000;
-  border:none;
-  border-radius:4vw;
-  cursor:pointer;
-  transition:0.25s;
-}
-.download-btn:hover {
-  transform:scale(1.06);
-}
-.dark .download-btn { 
-  background:rgba(255,255,255,0.12); 
-  color:#fff; 
+
+
+.toolbar {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  justify-content: space-between;
+  gap: 4vw;
 }
 
 /* SOCIAL ICONS */
 .social-row {
+  width: 100%; 
   display:flex;
   justify-content: space-between;
-  gap:2vmin;
-  /* margin-top:2vmin; */
 }
 .social-row a {
   padding:1vw;
@@ -372,7 +331,7 @@ canvas {
   display: grid;
   gap: 2vw;
   grid-template-columns: 1fr;
-  grid-template-rows: 7vw 28vw 12vw 15vw 18vw;
+  grid-template-rows: 8vw 28vw 12vw 12vw 20vw;
   grid-template-areas:  "box-1"
                         "box-2"
                         "box-3"
@@ -400,25 +359,38 @@ canvas {
     flex-direction: column;
     align-items: center;
   }
-.download-btn{flex: 1;}
+
   .navbar::before {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 0.5px;
-    height: 90%;
+    height: 80%;
   }
 
   .port-card { 
     gap: 2.5vw;
     padding: 2vw 4vw 4vw 4vw;
-    grid-template-columns: 5fr 7fr;
-    grid-template-rows: 6vw 14vw 10vw 10vw;
-    grid-template-areas:  "box-2 box-1"
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 8vw 12vw 12vw 8vw;
+    grid-template-areas:  "box-1 box-1"
                           "box-2 box-3"
                           "box-4 box-4"
                           "box-5 box-5";
 
+  }
+  .download-btn{
+    flex: 1;
+  }
+  .toolbar {
+    gap: 2.5vw; 
+    flex-direction: row;  
+    justify-content: space-between;
+  }
+  .social-row {
+    width: auto; 
+    display:flex;
+    gap: 2.5vw;
   }
   .social-row a {
     padding: 0.5vw;
@@ -448,6 +420,9 @@ canvas {
                           "box-2 box-3"
                           "box-2 box-4"
                           "box-5 box-5";
+  }
+  .toolbar {
+    gap: 3vw; 
   }
 }
 
@@ -536,6 +511,7 @@ canvas {
   .avatar-wrapper {
     padding: 2vh;
   }
+  .toolbar {
+    gap: 4vh; 
+  }
 }
-
-
