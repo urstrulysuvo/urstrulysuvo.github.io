@@ -327,7 +327,7 @@ canvas {
   left: 0;
   width: 75vw;
 
-  padding: 4vw 6vw;
+  padding: 3vw 6vw 6vw 6vw;
   aspect-ratio: 10 / 13;
 
   display: grid;
@@ -381,8 +381,9 @@ canvas {
 
   .port-card { 
     gap: 4vw;
+    padding: 3.5vw 8vw 8vw 8vw;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 6.4vw 12.8vw 6.4vw 6.4vw;
+    grid-template-rows: 6vw 12vw 6vw 6vw;
     grid-template-areas:  "box-1 box-1 box-1"
                           "box-2 box-3 box-3"
                           "box-4 box-4 box-4"
@@ -410,6 +411,7 @@ canvas {
 @media (min-aspect-ratio: 13/10) {
   .port-card {
     gap: 4vw;
+    padding: 4.6vw 10vw 10vw 10vw;
     grid-template-columns: 3fr 2fr 3fr;
     grid-template-rows: 4vw 6vw 6vw 4vw;
     grid-template-areas:  "box-1 box-1 box-1"
@@ -468,7 +470,7 @@ canvas {
   }
   .port-card {
     aspect-ratio: 8/5;
-    max-width: 66.7vw; 
+    width: 66.7vw; 
     height: auto;
   }
   .avatar {
@@ -494,7 +496,7 @@ canvas {
     aspect-ratio: 8/5; 
     width: 120vh;
     height: auto;
-    padding: 9vh;
+    padding: 6vh 12vh 12vh 12vh;
     gap: 4vh;
     grid-template-rows: 9vh 13.5vh 13.5vh 9vh;
   }
