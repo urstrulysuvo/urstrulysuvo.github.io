@@ -5,11 +5,23 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Base scale follows smaller viewport dimension */
+  --fs-base: clamp(14px, 1.1vmin, 18px);
+  /* Semantic scale */
+  --fs-xs: calc(var(--fs-base) * 0.85);
+  --fs-sm: calc(var(--fs-base) * 1.0);
+  --fs-md: calc(var(--fs-base) * 1.25);
+  --fs-lg: calc(var(--fs-base) * 1.6);
+  --fs-xl: calc(var(--fs-base) * 2.1);
+  --fs-xxl: calc(var(--fs-base) * 2.8);
+}
 
 /* Disable scrolling */
 html, body {
   height: 100%;
   overflow: hidden;   /* 🔥 main fix */
+  font-size: var(--fs-sm);
 }
 
 
@@ -86,7 +98,7 @@ canvas {
 
 /* NAVBAR */
 .navbar {
-  position: fixed;
+  position: absolute;
   padding: 0 8%;
   bottom: 0px;
   left: 50%;
@@ -144,7 +156,7 @@ canvas {
 /* PAGES */
 .page {
   position: absolute;
-  inset: 80px 0 0 0;  /*  below navbar */
+  inset: 0;  /*  below navbar */
   opacity: 0;
   visibility: hidden;
   text-align: center;
@@ -196,7 +208,6 @@ canvas {
   display: grid;
   justify-self: center;
   align-items: center;
-  border-color: solid transparent;
   background:linear-gradient(45deg, #000, #666, #fff, #333);
   background-size:400% 400%;
   animation:spinBorder 10s linear infinite;
@@ -249,7 +260,7 @@ canvas {
 
 .toolbar {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column-reverse;  
   align-items: center;
   justify-content: space-between;
   gap: 4vw;
@@ -320,7 +331,7 @@ canvas {
 
 /* HOME / PORT CARD */
 .port-card {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 75vw;
@@ -342,10 +353,30 @@ canvas {
 }
 
 .title {
-  font-size: 4vmin;
+  position: relative;
   font-weight: bold;
   color: #ff6b57;
+  padding-bottom: 3vw;
 }
+
+
+/* title divider bar */
+.title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(1);
+
+  width: 50%;
+  height: 0.5px;
+  border-radius: 1px;
+
+  background: #ff6b576e;
+  transition: transform 0.35s ease, background 0.3s ease;
+}
+
+
 
 @media (min-aspect-ratio: 3/4) {
   .navbar {
@@ -370,7 +401,7 @@ canvas {
 
   .port-card { 
     gap: 2.5vw;
-    padding: 2vw 4vw 4vw 4vw;
+    padding: 2vw 4vw 4vw 4vw; 
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 8vw 12vw 12vw 8vw;
     grid-template-areas:  "box-1 box-1"
@@ -379,6 +410,16 @@ canvas {
                           "box-5 box-5";
 
   }
+
+  .title {
+    padding-bottom: 2vw;
+  }
+
+  .greetings,
+  .info {
+    text-align: left;
+  }
+
   .download-btn{
     flex: 1;
   }
@@ -420,6 +461,9 @@ canvas {
                           "box-2 box-3"
                           "box-2 box-4"
                           "box-5 box-5";
+  }
+  .title {
+    padding-bottom: 2.5vw;
   }
 }
 
@@ -502,6 +546,9 @@ canvas {
     gap: 4vh;
     grid-template-rows: 10vh 15vh 15vh 10vh;
   }
+  .title {
+    padding-bottom: 4vh;
+  }
   .avatar {
     width: 26vh;
   }
@@ -515,4 +562,45 @@ canvas {
   .download-btn {
     height: 8vh;
   }
+}
+
+
+/* APPLY FONT SIZE */
+/* Titles */
+.title {
+  font-size: var(--fs-md);
+}
+
+/* Name */
+.name {
+  font-size: var(--fs-lg);
+}
+
+/* Typing text */
+.typing {
+  font-size: var(--fs-md);
+}
+
+/* Info / tagline */
+.info {
+  font-size: var(--fs-sm);
+}
+
+/* Navbar icons */
+/* .nav-link {
+  font-size: var(--fs-xs);
+}
+
+.nav-link i {
+  font-size: var(--fs-lg);
+} */
+
+/* Social icons */
+/* .social-row i {
+  font-size: var(--fs-lg);
+} */
+
+/* Buttons */
+.download-btn {
+  font-size: var(--fs-sm);
 }
