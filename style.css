@@ -506,10 +506,10 @@ canvas {
     grid-template-rows: 10vh 15vh 15vh 10vh;
   }
   .avatar {
-    width: 24vh;
+    width: 26vh;
   }
   .avatar-wrapper {
-    padding: 2vh;
+    padding: 1.5vh;
   }
   .social-row i {
     height: 6vh;
