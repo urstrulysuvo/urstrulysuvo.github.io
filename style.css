@@ -379,12 +379,12 @@ canvas {
   .port-card { 
     gap: 2.5vw;
     padding: 2vw 4vw 4vw 4vw;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 8vw 16vw 8vw 8vw;
-    grid-template-areas:  "box-1 box-1 box-1"
-                          "box-2 box-3 box-3"
-                          "box-4 box-4 box-4"
-                          "box-5 box-5 box-6";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10vw 10vw 10vw 10vw;
+    grid-template-areas:  "box-2 box-1"
+                          "box-2 box-3"
+                          "box-4 box-4"
+                          "box-5 box-6";
 
   }
   .social-row a {
