@@ -66,6 +66,7 @@ canvas {
 
   align-items:center;
   animation:fadeIn 1.2s ease;
+  overflow: hidden;
 }
 
 .hero-container::before {
@@ -105,16 +106,20 @@ canvas {
   transform: translateX(-50%);
   max-width: 75vw;
   max-height: 75vh;
-  width: 75vw; 
+  width: 75vw;
   aspect-ratio: 5/1;
-
+  background:rgba(0,0,0,0.08);
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 4vmin;
 }
 
-.navbar::before {
+.dark .navbar {
+  background: rgba(255,255,255,0.12);
+}
+
+/* .navbar::before {
   content: "";
   position: absolute;
   left: 5%;
@@ -132,7 +137,7 @@ canvas {
 
 .dark .navbar::before {
   background: rgba(255,255,255,0.25);
-}
+} */
 
 .nav-link {
   background: none;
@@ -173,6 +178,21 @@ canvas {
 .page.fade-out {
   opacity: 0;
   visibility: hidden;
+}
+
+.subsection {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 75vw;
+
+  padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4vw;
+  background: transparent;
+  gap: 4vw;
+  aspect-ratio: 10 / 13;
 }
 
 /* BUTTON */
@@ -259,6 +279,7 @@ canvas {
 
 
 .toolbar {
+  flex: 3;
   display: flex;
   flex-direction: column-reverse;  
   align-items: center;
@@ -331,37 +352,34 @@ canvas {
 
 /* HOME / PORT CARD */
 .port-card {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 75vw;
-
-  padding: 3vw 6vw 6vw 6vw;
-  aspect-ratio: 10 / 13;
-
+  flex: 9;
   display: grid;
   gap: 2vw;
+  border-radius: 3vw;
+  padding: 2vw;
   grid-template-columns: 1fr;
-  grid-template-rows: 8vw 28vw 12vw 12vw 20vw;
+  grid-template-rows: 2fr 1fr 1fr;
   grid-template-areas:  "box-1"
                         "box-2"
-                        "box-3"
-                        "box-4"
-                        "box-5";
+                        "box-3";
   align-items: center;
+  background:rgba(0,0,0,0.08);
   overflow: hidden;
+}
+.dark .port-card {
+  background:rgba(255,255,255,0.12);
 }
 
 .title {
+  flex: 1;
   position: relative;
   font-weight: bold;
   color: #ff6b57;
-  padding-bottom: 3vw;
 }
 
 
 /* title divider bar */
-.title::after {
+/* .title::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -374,7 +392,7 @@ canvas {
 
   background: #ff6b576e;
   transition: transform 0.35s ease, background 0.3s ease;
-}
+} */
 
 
 
@@ -399,21 +417,17 @@ canvas {
     height: 80%;
   }
 
-  .port-card { 
+  .port-card {
+    flex: 9; 
     gap: 2.5vw;
-    padding: 2vw 4vw 4vw 4vw; 
+    padding: 2.5vw; 
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 8vw 12vw 12vw 8vw;
-    grid-template-areas:  "box-1 box-1"
-                          "box-2 box-3"
-                          "box-4 box-4"
-                          "box-5 box-5";
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:  "box-1 box-2"
+                          "box-3 box-3";
 
   }
 
-  .title {
-    padding-bottom: 2vw;
-  }
 
   .greetings,
   .info {
@@ -424,6 +438,7 @@ canvas {
     flex: 1;
   }
   .toolbar {
+    flex: 1;
     gap: 2.5vw; 
     flex-direction: row;  
     justify-content: space-between;
@@ -453,17 +468,13 @@ canvas {
 
 @media (min-aspect-ratio: 13/10) {
   .port-card {
+    flex: 14;
     gap: 3vw;
-    padding: 2.5vw 5vw 5vw 5vw;
+    padding: 3vw;
     grid-template-columns: 3fr 5fr;
-    grid-template-rows: 5vw 7.5vw 7.5vw 5vw;
-    grid-template-areas:  "box-1 box-1"
-                          "box-2 box-3"
-                          "box-2 box-4"
-                          "box-5 box-5";
-  }
-  .title {
-    padding-bottom: 2.5vw;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:  "box-1 box-2"
+                          "box-1 box-3";
   }
 }
 
@@ -489,7 +500,8 @@ canvas {
     height: 53.6vw; 
     width: auto;
   }
-  .port-card {
+
+  .subsection {
     aspect-ratio: 6/5;
     width: 64.3vw; 
     height: auto;
@@ -514,7 +526,7 @@ canvas {
     height: 41.7vw; 
     width: auto;
   }
-  .port-card {
+  .subsection {
     aspect-ratio: 8/5;
     width: 66.7vw; 
     height: auto;
@@ -538,16 +550,14 @@ canvas {
     height: 75vh;
     width: auto;
   }
-  .port-card {
+  .subsection {
     aspect-ratio: 8/5; 
     width: 120vh;
     height: auto;
-    padding: 4vh 9vh 9vh 9vh;
-    gap: 4vh;
-    grid-template-rows: 10vh 15vh 15vh 10vh;
   }
-  .title {
-    padding-bottom: 4vh;
+  .port-card{
+    padding: 4vh;
+    gap: 4vh;
   }
   .avatar {
     width: 26vh;
