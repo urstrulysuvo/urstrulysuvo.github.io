@@ -216,7 +216,7 @@ canvas {
   position: relative;
   top: 0;
   left: var(--subsection-width);
-  transform: translateX(var(--subsection-width));
+  transform: translateX(-var(--subsection-width));
   width: var(--subsection-width);
   height: var(--subsection-height);
   padding: var(--pad);
