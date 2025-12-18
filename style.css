@@ -213,10 +213,10 @@ canvas {
 
 /* SUBSECTION */
 .subsection {
-  position: relative;
+  position: fixed;
   top: 0;
   left: var(--subsection-width);
-  transform: translateX(50%);
+  transform: translateX(-50%);
   width: var(--subsection-width);
   height: var(--subsection-height);
   padding: var(--pad);
