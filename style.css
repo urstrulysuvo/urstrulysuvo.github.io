@@ -42,6 +42,7 @@ body.lock-scroll {
   --aspect-ratio: 2/3;
   --width: 75vw;
   --height: 75vh;
+  --toggle-bg-size: 12vw;
   --subsection-width: 75vw;
   --subsection-height: 97.5vw;
   --nav-width: 75vw;
@@ -394,6 +395,7 @@ canvas {
     --aspect-ratio: 2/3;
     --width:75vw;
     --height: 112.5vw;
+    --toggle-bg-size: 12vw;
     --subsection-width: var(--width);
     --subsection-height: 97.5vw;
     --nav-width: var(--width);
@@ -411,6 +413,7 @@ canvas {
     --aspect-ratio: 7/5;
     --width: 75vw; 
     --height: 53.6vw;
+    --toggle-bg-size: 9vw;
     --subsection-width: 64.3vw;
     --subsection-height: var(--height);
     --nav-width: 10.7vw;
@@ -428,6 +431,7 @@ canvas {
     --aspect-ratio: 9/5;
     --width: 75vw; 
     --height: 41.7vw;
+    --toggle-bg-size: 6vw;
     --subsection-width: 66.7vw;
     --subsection-height: var(--height);
     --nav-width: 8.3vw;
@@ -443,7 +447,8 @@ canvas {
     --gap: 2vh;  
     --aspect-ratio: 9/5;
     --width: 135vh; 
-    --height: 75vh; 
+    --height: 75vh;
+    --toggle-bg-size: 12vh; 
     --subsection-width: 120vh;
     --subsection-height: var(--height);
     --nav-width: 15vh;
