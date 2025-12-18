@@ -249,6 +249,7 @@ canvas {
 
 /* TOOLBAR */
 .toolbar {
+  width: var(--subsection-width);
   flex: 2;
   display: flex;
   flex-direction: row;
