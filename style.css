@@ -38,6 +38,7 @@ body.lock-scroll {
   --radius-sm: calc(var(--radius) / 2);
   --gap: 2vw;
   --gap-sm: calc(var(--gap) / 2);
+  --subsection-position: 50%;
   --avatar-size: 180px;
   --aspect-ratio: 2/3;
   --width: 75vw;
@@ -195,7 +196,7 @@ canvas {
 
 
 /* DOWNLOAD BUTTON */
-.download-btn {
+/* .download-btn {
   height: var(--pad-xl);
   width: var(--pad-xl);
   background:var(--c-bg-neg);
@@ -207,7 +208,7 @@ canvas {
 }
 .download-btn:hover {
   transform:scale(1.06);
-}
+} */
 
 #download-btn-text {
   display: none;
@@ -217,15 +218,13 @@ canvas {
 .subsection {
   position: fixed;
   top: 0;
-  left: 50%;
-  translate:  translateX(-150%);
+  left: var(--subsection-position);
+  transform:  translateX(-50%);
   width: var(--subsection-width);
   height: var(--subsection-height);
   padding: var(--pad);
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
-  align-items: center;
   border-radius: var(--radius);
   background: transparent;
   gap: var(--gap);
@@ -251,22 +250,15 @@ canvas {
 /* TOOLBAR */
 .toolbar {
   width: var(--subsection-width);
-  flex: 2;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   gap: var(--gap);
 }
 
-/* SOCIAL ICONS */
-.social-row {
-  width: 100%; 
-  display:flex;
-  justify-content: space-evenly;
-  gap: var(--gap);
-}
-.social-row a {
-  padding:1vw;
+.download-btn a, .toolbar a {
+  padding:var(--pad-sm);
   border-radius: var(--radius-sm);  
   text-decoration: none;
   background:var(--c-bg-neg);
@@ -277,25 +269,20 @@ canvas {
   transition:0.25s;
 }
 
-.social-row a:visited,
-.social-row a:hover,
-.social-row a:active {
+.download-btn a:hover,
+.toolbar a:visited,
+.toolbar a:hover,
+.toolbar a:active {
   text-decoration: none !important;
 }
 
-.download-btn i, .social-row i {
+.toolbar i {
   aspect-ratio: 1 / 1;
   height: 6vw;
   align-content: center;
   font-size: 5vw; 
   color: var(--c-text-muted);         
 }
-
-.social-row a:hover {
-  transform:scale(1.15);
-  box-shadow:0 0 10px #aaa;
-}
-
 
 
 
@@ -332,7 +319,9 @@ canvas {
   }
 
   .download-btn{
+    width: auto;
     flex: 1;
+    height: 5vw;
   }
 
   #download-btn-text{
@@ -347,22 +336,20 @@ canvas {
 
   .toolbar {
     flex: 1;
+    width: auto; 
     flex-direction: row;
     justify-content: space-between;  
   }
-  .social-row {
-    width: auto; 
-  }
-  .social-row a {
+  .download-btn, .toolbar a {
     padding: 0.5vw;
   }
-  .social-row i {
+  .toolbar i, .download-btn i {
     height: 4vw;
     font-size: 3vw; 
   }
-  .download-btn {
+  /* .download-btn {
     height: 5vw;
-  }
+  } */
   .nav-link i {
     font-size: 4vmin;
   }
@@ -409,13 +396,14 @@ canvas {
     --radius: 3vw;
     --pad: 3vw;
     --gap: 1.5vw;
+    --subsection-position: 42.85%;
     --aspect-ratio: 7/5;
     --width: 75vw; 
-    --height: 53.6vw;
+    --height: 53.57vw;
     --toggle-bg-size: 9vw;
-    --subsection-width: 64.3vw;
+    --subsection-width: 64.28vw;
     --subsection-height: var(--height);
-    --nav-width: 10.7vw;
+    --nav-width: 10.71vw;
     --nav-height: var(--height);
     --nav-icon-size: 3.5vw; 
   }
@@ -429,11 +417,12 @@ canvas {
     --gap: 1vw;
     --aspect-ratio: 9/5;
     --width: 75vw; 
-    --height: 41.7vw;
+    --height: 41.66vw;
+    --subsection-position: 44.44%;
     --toggle-bg-size: 6vw;
-    --subsection-width: 66.7vw;
+    --subsection-width: 66.66vw;
     --subsection-height: var(--height);
-    --nav-width: 8.3vw;
+    --nav-width: 8.33vw;
     --nav-height: var(--height); 
     --nav-icon-size: 3vw;
   }
@@ -447,6 +436,7 @@ canvas {
     --aspect-ratio: 9/5;
     --width: 135vh; 
     --height: 75vh;
+    --subsection-position: calc(80% * (1vh / 1vw));
     --toggle-bg-size: 12vh; 
     --subsection-width: 120vh;
     --subsection-height: var(--height);
