@@ -215,11 +215,6 @@ canvas {
   display: none;
 }
 
-#download-btn-icon {
-  height: 5vmin;
-  font-size: 4vmin;
-}
-
 /* SUBSECTION */
 .subsection {
   position: relative;
@@ -229,7 +224,7 @@ canvas {
   height: var(--subsection-height);
   padding: var(--pad);
   display: flex;
-  jjustify-content: center;
+  justify-content: center;
   flex-direction: column;
   border-radius: var(--radius);
   background: transparent;
@@ -287,7 +282,7 @@ canvas {
   text-decoration: none !important;
 }
 
-.social-row i {
+.download-btn i, .social-row i {
   aspect-ratio: 1 / 1;
   height: 6vw;
   align-content: center;
