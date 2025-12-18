@@ -120,6 +120,7 @@ canvas {
   backdrop-filter:blur(8px);
   border:1px solid var(--c-border);
   align-items:center;
+  justify-items: center;
   justify-content: center;
   animation:fadeIn 1.2s ease;
   overflow: hidden;
