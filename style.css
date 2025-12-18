@@ -436,7 +436,7 @@ canvas {
     --aspect-ratio: 9/5;
     --width: 135vh; 
     --height: 75vh;
-    --subsection-position: calc(80% * (1vh / 1vw));
+    --subsection-position: 44.44%;
     --toggle-bg-size: 12vh; 
     --subsection-width: 120vh;
     --subsection-height: var(--height);
