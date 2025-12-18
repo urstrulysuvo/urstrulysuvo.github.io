@@ -180,12 +180,12 @@ canvas {
 /* DARK MODE TOGGLE */
 .theme-toggle {
   position:fixed;
-  top:1vmin; 
-  left:1vmin;
-  font-size: 4vmin;
+  top: var(--gap-sm); 
+  left:var(--gap-sm);
+  font-size: var(--pad);
   text-align: center;
-  width: 5vmin;
-  height: 5vmin;
+  width: var(--pad-lg);
+  height: var(--pad-lg);
   border:none;
   background:none;
   color: var(--c-text-trans);
