@@ -202,6 +202,7 @@ canvas {
   width: var(--pad-xl);
   background:var(--c-bg-neg);
   color:var(--c-text-main);
+  border: none;
   border-radius:var(--radius-sm);
   cursor:pointer;
   transition:0.25s;
