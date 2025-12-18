@@ -120,6 +120,7 @@ canvas {
   backdrop-filter:blur(8px);
   border:1px solid var(--c-border);
   align-items:center;
+  justify-content: center;
   animation:fadeIn 1.2s ease;
   overflow: hidden;
 }
@@ -214,9 +215,6 @@ canvas {
 /* SUBSECTION */
 .subsection {
   position: fixed;
-  top: 0;
-  left: var(--subsection-width);
-  transform: translateX(-50%);
   width: var(--subsection-width);
   height: var(--subsection-height);
   padding: var(--pad);
