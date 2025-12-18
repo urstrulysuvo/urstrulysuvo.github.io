@@ -229,6 +229,7 @@ canvas {
   height: var(--subsection-height);
   padding: var(--pad);
   display: flex;
+  jjustify-content: center;
   flex-direction: column;
   border-radius: var(--radius);
   background: transparent;
