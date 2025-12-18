@@ -339,7 +339,7 @@ canvas {
     display: inline;
   }
 
-  #download-btn-icon{
+  .download-btn i{
     display: none;
   }
 
