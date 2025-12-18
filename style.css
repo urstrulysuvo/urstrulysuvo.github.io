@@ -123,12 +123,10 @@ canvas {
   animation:fadeIn 1.2s ease;
   overflow: hidden;
 }
-
 @keyframes fadeIn {
   from { opacity:0; transform:translate(-50%, -60%); }
   to { opacity:1; transform:translate(-50%, -50%); }
 }
-
 .hero-container::before {
   content: "";
   position: absolute;
@@ -136,8 +134,8 @@ canvas {
   left: 0;
   width: 0;
   height: 0;
-  border-top: 12vmin solid var(--c-bg-neg);      /* triangle color */
-  border-right: 12vmin solid transparent;
+  border-top: var(--toggle-bg-size) solid var(--c-bg-neg);
+  border-right: var(--toggle-bg-size) solid transparent;
   cursor: pointer;
 }
 
@@ -159,7 +157,6 @@ canvas {
   align-items: center;
   gap: var(--gap);
 }
-
 .nav-link {
   background: none;
   border: none;
@@ -167,12 +164,10 @@ canvas {
   cursor: pointer;
   text-align: center;
 }
-
 .nav-link i {
   font-size: var(--nav-icon-size);
   display: block;
 }
-
 .nav-link.active,
 .nav-link:hover {
   color: var(--c-accent);
@@ -220,7 +215,8 @@ canvas {
 .subsection {
   position: relative;
   top: 0;
-  left: 0;
+  left: var(--subsection-width);
+  transform: translateX(-50%);
   width: var(--subsection-width);
   height: var(--subsection-height);
   padding: var(--pad);
