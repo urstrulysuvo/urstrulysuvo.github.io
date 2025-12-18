@@ -215,7 +215,7 @@ canvas {
 
 /* SUBSECTION */
 .subsection {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 50%;
   translate:  translateX(-50%);
