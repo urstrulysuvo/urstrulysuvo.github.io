@@ -218,7 +218,7 @@ canvas {
   position: fixed;
   top: 0;
   left: 50%;
-  translate:  translateX(-50%);
+  translate:  translateX(-150%);
   width: var(--subsection-width);
   height: var(--subsection-height);
   padding: var(--pad);
