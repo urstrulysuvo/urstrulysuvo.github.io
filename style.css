@@ -194,6 +194,10 @@ canvas {
 }
 .theme-toggle:hover { transform:scale(1.1); }
 
+
+
+/* ------- PROFILE PAGE ------- */
+
 /* SUBSECTION */
 .subsection {
   position: fixed;
@@ -365,6 +369,52 @@ canvas {
   color: var(--c-accent);
 }
 
+
+
+/* ------- PROFILE PAGE ------- */
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--radius));
+  left: 0;
+  width: var(--radius);
+  height: var(--radius);
+  background: var(--c-bg-neg);
+  -webkit-mask:
+    radial-gradient(circle at top right,
+      transparent var(--radius),
+      black var(--radius));
+  mask:
+    radial-gradient(circle at top right,
+      transparent var(--radius),
+      black var(--radius));
+}
+.navbar::after {
+  content: "";
+  position: absolute;
+
+  top: calc(-1 * var(--radius));
+  right: 0;
+
+  width: var(--radius);
+  height: var(--radius);
+
+  background: var(--c-bg-neg);
+
+  -webkit-mask:
+    radial-gradient(circle at top left,
+      transparent var(--radius),
+      black var(--radius));
+  mask:
+    radial-gradient(circle at top left,
+      transparent var(--radius),
+      black var(--radius));
+}
+
+
+
+
+
 /* Viewport aspect ratio < 0.75 */
 @media (min-aspect-ratio: 3/4) {
   .navbar {
@@ -384,6 +434,52 @@ canvas {
     grid-template-areas:  "box-1 box-2"
                           "box-3 box-3";
   }
+
+  .navbar::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: calc(-1 * var(--radius));
+
+    width: var(--radius);
+    height: var(--radius);
+
+    background: var(--c-bg-neg);
+
+    -webkit-mask:
+      radial-gradient(circle at bottom left,
+        transparent var(--radius),
+        black calc(var(--radius) + 1px));
+    mask:
+      radial-gradient(circle at bottom left,
+        transparent var(--radius),
+        black calc(var(--radius) + 1px));
+  }
+
+  .navbar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: calc( var(--height)- var(--radius));
+    left: calc(-1 * var(--radius));
+
+    width: var(--radius);
+    height: var(--radius);
+
+    background: var(--c-bg-neg);
+
+    -webkit-mask:
+      radial-gradient(circle at top left,
+        transparent var(--radius),
+        black var(--radius));
+    mask:
+      radial-gradient(circle at top left,
+        transparent var(--radius),
+        black var(--radius));
+  }
+
+
   .greetings,
   .info {
     text-align: justify;
@@ -503,3 +599,28 @@ canvas {
     --social-icon-size:4.5vh;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
