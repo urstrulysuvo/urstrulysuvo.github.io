@@ -278,6 +278,7 @@ canvas {
 /* DOWNLOAD BUTTON */
 .download-btn {
   width: 100%;
+  margin: auto;
   height: var(--pad-xl);
   background:var(--c-bg-neg);
   color:var(--c-text-main);
