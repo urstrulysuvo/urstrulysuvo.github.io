@@ -51,7 +51,6 @@ body.lock-scroll {
   --nav-icon-size: 5vw;
   --social-icon-size: 5vw;
 
-  --fs-base: clamp(14px, 1.1vmin, 18px);
   --fs-xs: 1.5vmin;
   --fs-sm: 2vmin;
   --fs-md: 3vmin;
@@ -367,6 +366,13 @@ canvas {
     --nav-width: var(--width);
     --nav-height: 15vw;
     --nav-icon-size: 5vw;
+
+    --fs-xs: 1.1vmin;
+    --fs-sm: 1.5vmin;
+    --fs-md: 2vmin;
+    --fs-lg: 2.4vmin;
+    --fs-xl: 3vmin;
+    --fs-xxl: 3.5vmin;
   }
 }
 
