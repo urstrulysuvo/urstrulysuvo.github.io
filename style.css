@@ -247,16 +247,18 @@ canvas {
   gap: var(--gap);
 }
 .social-row a {
+  margin:auto;
   height: var(--pad-xl);
   width: var(--pad-xl);
   padding:var(--pad-sm);
   border-radius: var(--radius);  
   text-decoration: none;
-  background:var(--c-bg-neg);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transition:0.25s;
+  background: var(--c-bg-neg);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s;
 }
 
 .social-row a:visited,
