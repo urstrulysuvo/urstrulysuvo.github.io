@@ -333,15 +333,15 @@ canvas {
   .info {
     text-align: left;
   }
-
-  .download-btn{
-    flex: 1;
-  }
-
   .toolbar {
     flex: 1;
     flex-direction: row;
+    gap: var(--pad);
   }
+  .social-row{
+    gap: var(--pad);
+  }
+
   .download-btn, .toolbar a {
     padding: 0.5vw;
   }
@@ -370,6 +370,11 @@ canvas {
     grid-template-areas:  "box-1 box-2"
                           "box-1 box-3";
   }
+  .toolbar {
+    flex: 2;
+    flex-direction: row;
+  }
+
 }
 
 /* Viewport aspect ratio < 0.75 */
