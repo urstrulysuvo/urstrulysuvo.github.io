@@ -245,6 +245,7 @@ canvas {
   display:flex;
   justify-content: space-between;
   justify-items: center;
+  gap: var(--gap);
 }
 .social-row a {
   height: var(--pad-xl);
@@ -334,19 +335,12 @@ canvas {
   }
 
   .download-btn{
-    width: auto;
     flex: 1;
   }
 
   .toolbar {
     flex: 1;
     flex-direction: row;
-    gap: var(--gap); 
-  }
-  .social-row {
-    width: auto; 
-    display:flex;
-    gap: var(--gap);
   }
   .download-btn, .toolbar a {
     padding: 0.5vw;
