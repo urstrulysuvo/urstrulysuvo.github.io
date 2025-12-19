@@ -257,7 +257,6 @@ canvas {
   align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
   transition: 0.25s;
 }
 
@@ -286,7 +285,9 @@ canvas {
   border: none;
   border-radius:var(--radius);
   cursor:pointer;
-  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   text-decoration: none;
   transition:0.25s;
 }
