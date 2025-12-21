@@ -557,7 +557,7 @@ canvas {
   :root {
     --radius: 2vw;
     --pad: 2vw;
-    --gap: 2vw;
+    --gap: 1vw;
     --aspect-ratio: 9/5;
     --width: 75vw; 
     --height: 41.66vw;
