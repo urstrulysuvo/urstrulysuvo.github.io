@@ -570,6 +570,13 @@ canvas {
     --nav-height: var(--height); 
     --nav-icon-size: 3vw;
     --social-icon-size: 2.5vw;
+
+    --fs-xs: 1vw;
+    --fs-sm: 1.3vw;
+    --fs-md: 1.8vw;
+    --fs-lg: 2.1vw;
+    --fs-xl: 2.6vw;
+    --fs-xxl: 3w;
   }
 }
 
