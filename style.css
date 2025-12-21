@@ -543,12 +543,12 @@ canvas {
     --nav-icon-size: 3.5vw; 
     --social-icon-size: 3.5vw; 
 
-    --fs-xs: 1.1vmin;
-    --fs-sm: 1.5vmin;
-    --fs-md: 2vmin;
-    --fs-lg: 2.4vmin;
-    --fs-xl: 3vmin;
-    --fs-xxl: 3.5vmin;
+    --fs-xs: 1.1vw;
+    --fs-sm: 1.5vw;
+    --fs-md: 2vw;
+    --fs-lg: 2.4vw;
+    --fs-xl: 3vw;
+    --fs-xxl: 3.5w;
   }
 }
 
@@ -570,13 +570,6 @@ canvas {
     --nav-height: var(--height); 
     --nav-icon-size: 3vw;
     --social-icon-size: 2.5vw;
-
-    --fs-xs: 1.5vmin;
-    --fs-sm: 2vmin;
-    --fs-md: 3vmin;
-    --fs-lg: 3vmin;
-    --fs-xl: 3.7vmin;
-    --fs-xxl: 4.5vmin;
   }
 }
 
@@ -597,30 +590,12 @@ canvas {
     --nav-height: var(--height);
     --nav-icon-size: 5vh;
     --social-icon-size:4.5vh;
+
+    --fs-xs: 1.5vh;
+    --fs-sm: 2vh;
+    --fs-md: 3vh;
+    --fs-lg: 3vh;
+    --fs-xl: 3.7vh;
+    --fs-xxl: 4.5vh;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
