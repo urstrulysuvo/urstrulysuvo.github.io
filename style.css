@@ -61,19 +61,22 @@ body.lock-scroll {
   --c-bg: rgba(255,255,255,0.14); 
   --c-bg-neg: rgba(0,0,0,0.08);
   --c-text-main: #111;
+  --c-text-neg: #eee;
   --c-text-muted: #555;
   --c-text-trans: rgba(85, 85, 85, 0.7);
   --c-border: rgba(0,0,0,0.20);
-  --c-accent: #ff6b57;
+  --c-accent: #ee4630;
 }
 
 body.dark {
   --c-bg: rgba(0,0,0,0.18);
   --c-bg-neg: rgba(255,255,255,0.08);
   --c-text-main: #eee;
+  --c-text-neg: #111;
   --c-text-muted: #ccc;
   --c-text-trans: rgba(204, 204, 204, 0.6);
   --c-border: rgba(255,255,255,0.25);
+  --c-accent: #ff7360;
 }
 
 /* CANVAS */
@@ -369,9 +372,6 @@ canvas {
   color: var(--c-accent);
 }
 
-
-
-/* ------- PROFILE PAGE ------- */
 .navbar::before {
   content: "";
   position: absolute;
@@ -412,6 +412,66 @@ canvas {
 }
 
 
+
+/* ------- SKILLS PAGE ------- */
+
+.skills-wrapper {
+  background: var(--c-bg-neg);
+  border-radius: var(--radius-sm);
+  padding: var(--pad-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.skill {
+  flex: 1;
+  align-self: center; 
+  text-align: center;
+  justify-content: center;
+  color: var(--c-text-main);
+}
+
+.skill p {
+  margin: var(--gap-sm) auto auto auto;
+  font-weight: bold;
+  font-size: var(--fs-md);
+}
+
+/* Circular Progress */
+.circle {
+  margin: auto;
+  --size: calc(0.7 * var(--avatar-size));
+  --thickness: var(--radius-sm);
+  --primary: var(--c-bg-neg);
+  --secondary: var(--c-bg);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      var(--primary) calc(var(--value) * 1%),
+      var(--secondary) 0
+    );
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.circle::before {
+  content: "";
+  width: calc(var(--size) - var(--thickness) * 2);
+  height: calc(var(--size) - var(--thickness) * 2);
+  background: var(--c-accent);
+  border-radius: 50%;
+  position: absolute;
+}
+.circle span {
+  position: relative;
+  font-size: var(--fs-lg);
+  font-weight: bold;
+  color: var(--c-text-neg);
+}
 
 
 
@@ -485,7 +545,7 @@ canvas {
     text-align: justify;
   }
   .title  {
-    bottom: -2vmin;
+    bottom: -1vmin;
   }
   .toolbar {
     flex: 1;
