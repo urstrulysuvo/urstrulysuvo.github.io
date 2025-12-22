@@ -557,7 +557,7 @@ canvas {
   :root {
     --radius: 2vw;
     --pad: 2vw;
-    --gap: 1vw;
+    --gap: 2vw;
     --aspect-ratio: 9/5;
     --width: 75vw; 
     --height: 41.66vw;
@@ -572,11 +572,11 @@ canvas {
     --social-icon-size: 2.5vw;
 
     --fs-xs: 1vw;
-    --fs-sm: 1.3vw;
+    --fs-sm: 1.4vw;
     --fs-md: 1.8vw;
     --fs-lg: 2.1vw;
     --fs-xl: 2.6vw;
-    --fs-xxl: 3w;
+    --fs-xxl: 3Vw;
   }
 }
 
@@ -584,7 +584,7 @@ canvas {
   :root {
     --radius: 4vh;
     --pad: 4vh;
-    --gap: 4vh;  
+    --gap: 3vh;  
     --aspect-ratio: 9/5;
     --width: 135vh; 
     --height: 75vh;
@@ -598,11 +598,11 @@ canvas {
     --nav-icon-size: 5vh;
     --social-icon-size:4.5vh;
 
-    --fs-xs: 1.5vh;
-    --fs-sm: 2vh;
-    --fs-md: 3vh;
-    --fs-lg: 3vh;
-    --fs-xl: 3.7vh;
-    --fs-xxl: 4.5vh;
+    --fs-xs: 1.8vh;
+    --fs-sm: 2.5vh;
+    --fs-md: 3.2vh;
+    --fs-lg: 3.6vh;
+    --fs-xl: 4.5vh;
+    --fs-xxl: 5.2vh;
   }
 }
