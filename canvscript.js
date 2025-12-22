@@ -1,91 +1,20 @@
 /* BINARY BACKGROUND */
-// const canvas = document.getElementById('c');
-// const ctx = canvas.getContext('2d');
-
-// let fontSize = 18;
-// let cols, drops;
-// const charSet = ["0","1"];
-
-// function resizeBg() {
-//   canvas.width = innerWidth;
-//   canvas.height = innerHeight;
-//   ctx.font = fontSize + "px monospace";
-//   cols = Math.floor(innerWidth / fontSize);
-//   drops = Array(cols).fill(0).map(() => ({
-//     y: Math.random() * -200,
-//     speed: 1 + Math.random() * 1.2
-//   }));
-// }
-
-// function drawBg() {
-//   const isDark = document.body.classList.contains("dark");
-//   ctx.fillStyle = isDark ? "#000" : "#fff";
-//   ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-//   drops.forEach((drop, i) => {
-//     const x = i * fontSize;
-//     const trail = 5 + Math.floor(Math.random() * 6);
-
-//     for (let t = 0; t < trail; t++) {
-//       const yPos = drop.y - t * fontSize;
-//       if (yPos < -fontSize || yPos > canvas.height) continue;
-
-//       let alpha = 1 - t / (trail + 1);
-
-//       ctx.fillStyle = isDark
-//         ? `rgba(255,255,255,${alpha})`
-//         : `rgba(20,20,20,${alpha})`;
-
-//       ctx.fillText(charSet[Math.random() < 0.5 ? 0 : 1], x, yPos);
-//     }
-
-//     drop.y += drop.speed * fontSize * 0.3;
-//     if (drop.y > canvas.height + 50) {
-//       drop.y = Math.random() * -200;
-//       drop.speed = 1 + Math.random() * 1.2;
-//     }
-//   });
-
-//   requestAnimationFrame(drawBg);
-// }
-
-// resizeBg();
-// drawBg();
-// onresize = resizeBg;
-
-
-
-
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
 
 let fontSize = 18;
-let cols;
-let drops;
-const charSet = ["0", "1"];
+let cols, drops;
+const charSet = ["0","1"];
 
 function resizeBg() {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
   ctx.font = fontSize + "px monospace";
   cols = Math.floor(innerWidth / fontSize);
-
-  // Initialize drops for all columns
-  drops = Array(cols).fill(0).map((_, i) => {
-    if (i % 2 === 0) { // even columns → bottom→top
-      return {
-        y: Math.random() * canvas.height,
-        speed: 1 +  Math.random() * 1.2,
-        direction: -1 // upward
-      };
-    } else { // odd columns → top→bottom
-      return {
-        y: Math.random() * -200,
-        speed: 1+ Math.random() * 1.2,
-        direction: 1 // downward
-      };
-    }
-  });
+  drops = Array(cols).fill(0).map(() => ({
+    y: Math.random() * -200,
+    speed: 1 + Math.random() * 1.2
+  }));
 }
 
 function drawBg() {
@@ -95,12 +24,13 @@ function drawBg() {
 
   drops.forEach((drop, i) => {
     const x = i * fontSize;
-    const trail = 7 + Math.floor(Math.random() * 6);
+    const trail = 5 + Math.floor(Math.random() * 6);
 
     for (let t = 0; t < trail; t++) {
-      const yPos = drop.y - t * fontSize * drop.direction;
+      const yPos = drop.y - t * fontSize;
       if (yPos < -fontSize || yPos > canvas.height) continue;
-      const alpha = 1 - t / (trail + 1);
+
+      let alpha = 1 - t / (trail + 1);
 
       ctx.fillStyle = isDark
         ? `rgba(255,255,255,${alpha})`
@@ -109,14 +39,9 @@ function drawBg() {
       ctx.fillText(charSet[Math.random() < 0.5 ? 0 : 1], x, yPos);
     }
 
-    drop.y += drop.speed * fontSize * 0.4 * drop.direction;
-
-    // Reset drops when out of bounds
-    if (drop.direction === 1 && drop.y > canvas.height + 50) {
+    drop.y += drop.speed * fontSize * 0.3;
+    if (drop.y > canvas.height + 50) {
       drop.y = Math.random() * -200;
-      drop.speed = 1 + Math.random() * 1.2;
-    } else if (drop.direction === -1 && drop.y < -50) {
-      drop.y = canvas.height + Math.random() * 200;
       drop.speed = 1 + Math.random() * 1.2;
     }
   });
@@ -126,7 +51,82 @@ function drawBg() {
 
 resizeBg();
 drawBg();
-window.onresize = resizeBg;
+onresize = resizeBg;
+
+
+
+
+// const canvas = document.getElementById('c');
+// const ctx = canvas.getContext('2d');
+
+// let fontSize = 18;
+// let cols;
+// let drops;
+// const charSet = ["0", "1"];
+
+// function resizeBg() {
+//   canvas.width = innerWidth;
+//   canvas.height = innerHeight;
+//   ctx.font = fontSize + "px monospace";
+//   cols = Math.floor(innerWidth / fontSize);
+
+//   // Initialize drops for all columns
+//   drops = Array(cols).fill(0).map((_, i) => {
+//     if (i % 2 === 0) { // even columns → bottom→top
+//       return {
+//         y: Math.random() * canvas.height,
+//         speed: 1 +  Math.random() * 1.2,
+//         direction: -1 // upward
+//       };
+//     } else { // odd columns → top→bottom
+//       return {
+//         y: Math.random() * -200,
+//         speed: 1+ Math.random() * 1.2,
+//         direction: 1 // downward
+//       };
+//     }
+//   });
+// }
+
+// function drawBg() {
+//   const isDark = document.body.classList.contains("dark");
+//   ctx.fillStyle = isDark ? "#000" : "#fff";
+//   ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+//   drops.forEach((drop, i) => {
+//     const x = i * fontSize;
+//     const trail = 7 + Math.floor(Math.random() * 6);
+
+//     for (let t = 0; t < trail; t++) {
+//       const yPos = drop.y - t * fontSize * drop.direction;
+//       if (yPos < -fontSize || yPos > canvas.height) continue;
+//       const alpha = 1 - t / (trail + 1);
+
+//       ctx.fillStyle = isDark
+//         ? `rgba(255,255,255,${alpha})`
+//         : `rgba(20,20,20,${alpha})`;
+
+//       ctx.fillText(charSet[Math.random() < 0.5 ? 0 : 1], x, yPos);
+//     }
+
+//     drop.y += drop.speed * fontSize * 0.4 * drop.direction;
+
+//     // Reset drops when out of bounds
+//     if (drop.direction === 1 && drop.y > canvas.height + 50) {
+//       drop.y = Math.random() * -200;
+//       drop.speed = 1 + Math.random() * 1.2;
+//     } else if (drop.direction === -1 && drop.y < -50) {
+//       drop.y = canvas.height + Math.random() * 200;
+//       drop.speed = 1 + Math.random() * 1.2;
+//     }
+//   });
+
+//   requestAnimationFrame(drawBg);
+// }
+
+// resizeBg();
+// drawBg();
+// window.onresize = resizeBg;
 
 
 
