@@ -212,6 +212,7 @@ canvas {
   height: var(--subsection-height);
   padding: var(--pad);
   display: flex;
+  height: 100%;
   flex-direction: column;
   border-radius: var(--radius);
   background: transparent;
@@ -222,6 +223,7 @@ canvas {
 .profile-view {
   flex: 12;
   display: grid;
+  height: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: 2fr 1fr;
   grid-template-areas:  "port-box"
@@ -231,6 +233,7 @@ canvas {
 }
 .port-card {
   display: grid;
+  height: 100%;
   gap: var(--gap);
   border-radius: var(--radius-sm);
   padding: var(--pad);
