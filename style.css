@@ -233,7 +233,6 @@ canvas {
 }
 .port-card {
   display: grid;
-  height: 100%;
   gap: var(--gap);
   border-radius: var(--radius-sm);
   padding: var(--pad);
