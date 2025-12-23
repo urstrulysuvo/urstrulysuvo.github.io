@@ -216,6 +216,7 @@ canvas {
   border-radius: var(--radius);
   background: transparent;
   gap: var(--gap);
+  /* overflow: hidden; */
 }
 
 /* HOME / PORT CARD */
@@ -429,15 +430,13 @@ canvas {
 /* ------- SKILLS PAGE ------- */
 .skill-view {
   flex: 12;
-  display: grid;
+  display: flex;
   height: 91%;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr 5fr;
-  grid-template-areas:  "box-5"
-                        "box-6";
+  flex-direction: column;
   gap: var(--gap);
 }
 .skills-wrapper {
+  height: 30%;
   background: var(--c-bg-neg);
   border-radius: var(--radius-sm);
   padding: var(--pad-sm);
@@ -448,7 +447,6 @@ canvas {
 }
 
 .skill {
-  flex: 1;
   align-self: center; 
   text-align: center;
   justify-content: center;
@@ -496,14 +494,14 @@ canvas {
 }
 
 .skills-scroll-wrap {
-  /* flex: auto; */
-  height: auto;
+  position: relative;
+  height: 68%;
   padding: var(--gap-sm); /* scrollbar margin */
   background: var(--c-bg-neg);
   border-radius: var(--radius-sm);
 }
 .skills-box {
-  aspect-ratio: 6 / 5;
+  height: 100%;
   /* margin: var(--gap-sm) 0 var(--gap) 0; */
   width: auto;
   padding: var(--pad-sm);
@@ -520,7 +518,7 @@ canvas {
 }
 
 .skills-box::-webkit-scrollbar-thumb {
-  background: var(--c-text-trans);
+  background: var(--c-text-neg);
   border-radius: 5px;
 }
 .skill-row {
@@ -549,7 +547,7 @@ canvas {
 .fill {
   height: 100%;
   width: 0;
-  background: var(--c-accent);
+  background: var(--c-text-trans);
   border-radius: var(--gap-sm);
   animation: fillBar 1.4s ease forwards;
 }
@@ -586,12 +584,17 @@ canvas {
   }
   .skill-view{
     flex: 4;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:  "box-5 box-6";
+    width: 100%;
+    flex-direction: row;
   }
   .skills-wrapper{
+    flex: 1;
     flex-direction: column;
+    height: 100%;
+  }
+  .skills-scroll-wrap{
+    flex: 4;
+    height: 100%;
   }
   .navbar::before {
     content: "";
@@ -649,18 +652,17 @@ canvas {
                           "box-1 box-3";
   }
   .skill-view{
-    flex: 5;
-    height: 70%;
+    flex: 4;
     grid-template-columns: 1fr 6fr;
     grid-template-rows: 1fr;
     grid-template-areas:  "box-5 box-6";
     gap: var(--gap);
   }
   .circle{    
-    --size: calc(0.5 * var(--avatar-size));
+    --size: calc(0.45 * var(--avatar-size));
   }
-  .skills-box{
-    aspect-ratio: 5/3;
+  .skills-scroll-wrap{
+    flex:5;
   }
 
 }
@@ -744,7 +746,7 @@ canvas {
   :root {
     --radius: 4vh;
     --pad: 4vh;
-    --gap: 2vh;  
+    --gap: 2.5vh;  
     --aspect-ratio: 9/5;
     --width: 135vh; 
     --height: 75vh;
