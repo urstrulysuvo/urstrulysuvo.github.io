@@ -220,13 +220,13 @@ canvas {
 
 /* HOME / PORT CARD */
 .profile-view {
-  position: relative;
   flex: 12;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 9fr 3fr;
   grid-template-areas:  "port-box"
                         "tool-box";
+  align-items: center;
   gap: var(--gap);
 }
 .port-card {
