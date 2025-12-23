@@ -225,7 +225,7 @@ canvas {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 9fr 3fr;
-  grid-template-areas:  "profile-box"
+  grid-template-areas:  "port-box"
                         "tool-box";
   gap: var(--gap);
 }
