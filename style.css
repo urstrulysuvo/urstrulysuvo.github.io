@@ -225,9 +225,10 @@ canvas {
   display: grid;
   height: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 9fr 2fr 1fr;
   grid-template-areas:  "port-box"
-                        "tool-box";
+                        "tool-box"
+                        "";
   align-items: center;
   gap: var(--gap);
 }
