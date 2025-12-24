@@ -61,6 +61,7 @@ body.lock-scroll {
 
   --c-bg: rgba(255,255,255,0.14); 
   --c-bg-neg: rgba(0,0,0,0.08);
+  --c-bg-neg-sec: rgba(0,0,0,0.04);
   --c-text-main: #111;
   --c-text-neg: #eee;
   --c-text-muted: #555;
@@ -72,6 +73,7 @@ body.lock-scroll {
 body.dark {
   --c-bg: rgba(0,0,0,0.18);
   --c-bg-neg: rgba(255,255,255,0.08);
+  --c-bg-neg-sec: rgba(255,255,255,0.04);
   --c-text-main: #eee;
   --c-text-neg: #111;
   --c-text-muted: #ccc;
@@ -488,13 +490,12 @@ canvas {
 .skills-scroll-wrap {
   position: relative;
   height: 68%;
-  padding: var(--gap-sm); /* scrollbar margin */
+  padding: var(--gap-sm); 
   background: var(--c-bg-neg);
   border-radius: var(--radius-sm);
 }
 .scroll-box {
   height: 100%;
-  /* margin: var(--gap-sm) 0 var(--gap) 0; */
   width: auto;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -559,9 +560,8 @@ canvas {
 .projects-scroll-wrap {
   position: relative;
   height: 100%;
-  padding: var(--gap-sm); /* scrollbar margin */
-  background: var(--c-bg-neg);
   border-radius: var(--radius-sm);
+  overflow: hidden;
 }
 .project-card {
   position: relative;
@@ -570,109 +570,77 @@ canvas {
   justify-content: space-between;
   align-items: start;
   padding: var(--pad-sm); 
-  margin: var(--pad-sm);
+  margin: 0 0 var(--pad-sm) 0;
   border-radius: var(--radius-sm);
+  background: var(--c-bg-neg);
   /* box-shadow: 0 10px 30px rgba(0,0,0,0.35); */
-}
-.project-card::before,
-.project-card::after,
-.project-card span::before,
-.project-card span::after {
-  content: "";
-  position: absolute;
-  width: 5vmin;
-  height: 5vmin;
-  border: 1px solid var(--c-text-muted);
-}
-/* top-left */
-.project-card::before {
-  top: 0;
-  left: 0;
-  border-right: none;
-  border-bottom: none;
-  border-radius: var(--radius-sm) 0 0 0;
-}
-/* top-right */
-.project-card::after {
-  top: 0;
-  right: 0;
-  border-left: none;
-  border-bottom: none;
-  border-radius: 0 var(--radius-sm) 0 0;
-}
-/* bottom-left */
-.project-card span::before {
-  bottom: 0;
-  left: 0;
-  border-right: none;
-  border-top: none;
-  border-radius: 0 0 0 var(--radius-sm);
-}
-/* bottom-right */
-.project-card span::after {
-  bottom: 0;
-  right: 0;
-  border-left: none;
-  border-top: none;
-  border-radius: 0 0 var(--radius-sm) 0;
 }
 
 /* CONTENT */
 .project-body {
   display: flex;
   flex-direction: column;
+  align-items: start;
+  text-align: start;
   gap: var(--gap);
 }
-
 .project-title {
+  position: relative;
+  width: 100%;
+  padding-bottom: var(--gap);
   font-size: var(--fs-lg);
   color: var(--c-text-main);
   font-weight: 600;
 }
-
+.project-title::after{
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  background: var(--c-border);
+}
 .project-desc {
   font-size: var(--fs-md);
   color: var(--c-text-muted);
 }
-
 /* TECH STACK */
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap-sm);
 }
-
 .tech-stack span {
   font-size: var(--fs-sm);
-  padding: var(--pad-sm);
-  border-radius: var(--radius);
+  padding: var(--gap-sm) var(--gap);
+  border-radius: var(--radius-sm);
   background: var(--c-bg-neg);
   color: var(--c-text-main);
 }
-
 /* FLOATING ARROW BUTTON */
 .github-btn {
   position: absolute;
   bottom: var(--pad-sm);
   right: var(--pad-sm);
-
-  width: 40px;
-  height: 40px;
+  height: var(--pad-xl);
+  width: var(--pad-xl);
+  padding: var(--pad-sm);
   border-radius: 50%;
-
-  display: grid;
-  place-items: center;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--c-bg-neg);
-  color: var(--c-text-neg);
+  color: var(--c-text-main);
   text-decoration: none;
-  font-size: 20px;
+  font-size: var(--social-icon-size);
 
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .github-btn:hover {
-  background: var(--c-bg);
+  background: var(--c-border);
   transform: translateX(4px);
 }
 
@@ -695,7 +663,6 @@ canvas {
   }
   .port-card {
     height: 90%;
-    flex-wrap: nowrap;
     grid-template-columns: 2fr 5fr;
     grid-template-rows: 2fr 3fr;
     grid-template-areas:  "box-1 box-2"
