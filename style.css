@@ -568,7 +568,7 @@ canvas {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--pad); 
+  padding: var(--pad-sm); 
   margin: var(--pad-sm);
   border-radius: var(--radius-sm);
   /* box-shadow: 0 10px 30px rgba(0,0,0,0.35); */
@@ -603,22 +603,22 @@ canvas {
 }
 
 /* bottom-left */
-.project-card span::before {
+/* .project-card span::before {
   bottom: 0;
   left: 0;
   border-right: none;
   border-top: none;
   border-radius: 0 0 0 14px;
-}
+} */
 
 /* bottom-right */
-.project-card span::after {
+/* .project-card span::after {
   bottom: 0;
   right: 0;
   border-left: none;
   border-top: none;
   border-radius: 0 0 14px 0;
-}
+} */
 
 /* CONTENT */
 .project-body {
