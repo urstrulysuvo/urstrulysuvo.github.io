@@ -580,8 +580,8 @@ canvas {
 .project-card span::after {
   content: "";
   position: absolute;
-  width: 10vmin;
-  height: 10vmin;
+  width: 5vmin;
+  height: 5vmin;
   border: 1px solid var(--c-text-muted);
 }
 /* top-left */
