@@ -553,16 +553,11 @@ canvas {
   flex: 12;
   display: flex;
   height: 89%;
-  flex-direction: column;
-  gap: var(--gap);
-
 }
 .projects-scroll-wrap {
   position: relative;
   height: 100%;
   padding: 0 var(--gap-sm) 0 0;
-  /* background: var(--c-bg-neg); */
-  border-radius: var(--radius-sm);
 }
 .project-card {
   position: relative;
@@ -570,6 +565,7 @@ canvas {
   flex-direction: column;
   justify-content: space-between;
   padding: var(--pad); 
+  margin-right: var(--pad-sm);
   border-radius: var(--radius-sm);
   background: var(--c-bg-neg);
   color: var(--c-text-main);
