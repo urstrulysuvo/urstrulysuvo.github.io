@@ -583,42 +583,38 @@ canvas {
   height: 22px;
   border: 2px solid var(--c-text-trans);
 }
-
 /* top-left */
 .project-card::before {
   top: 0;
   left: 0;
   border-right: none;
   border-bottom: none;
-  border-radius: 14px 0 0 0;
+  border-radius: var(--radius-sm) 0 0 0;
 }
-
 /* top-right */
 .project-card::after {
   top: 0;
   right: 0;
   border-left: none;
   border-bottom: none;
-  border-radius: 0 14px 0 0;
+  border-radius: 0 var(--radius-sm) 0 0;
 }
-
 /* bottom-left */
-/* .project-card span::before {
+.project-card span::before {
   bottom: 0;
   left: 0;
   border-right: none;
   border-top: none;
-  border-radius: 0 0 0 14px;
-} */
-
+  border-radius: 0 0 0 var(--radius-sm);
+}
 /* bottom-right */
-/* .project-card span::after {
+.project-card span::after {
   bottom: 0;
   right: 0;
   border-left: none;
   border-top: none;
-  border-radius: 0 0 14px 0;
-} */
+  border-radius: 0 0 var(--radius-sm) 0;
+}
 
 /* CONTENT */
 .project-body {
