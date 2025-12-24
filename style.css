@@ -571,8 +571,6 @@ canvas {
   padding: var(--pad); 
   margin-right: var(--pad-sm);
   border-radius: var(--radius-sm);
-  background: var(--c-bg-neg);
-  color: var(--c-text-main);
   /* box-shadow: 0 10px 30px rgba(0,0,0,0.35); */
 }
 
