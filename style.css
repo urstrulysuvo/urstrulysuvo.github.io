@@ -573,6 +573,33 @@ canvas {
   border-radius: var(--radius-sm);
   /* box-shadow: 0 10px 30px rgba(0,0,0,0.35); */
 }
+/* top-left & bottom-right */
+.project-card::before,
+.project-card::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #4caf50;
+}
+
+/* top-left */
+.project-card::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 14px 0 0 0;
+}
+
+/* bottom-right */
+.project-card::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 14px 0;
+}
 
 /* CONTENT */
 .project-body {
