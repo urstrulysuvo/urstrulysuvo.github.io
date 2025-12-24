@@ -569,17 +569,18 @@ canvas {
   flex-direction: column;
   justify-content: space-between;
   padding: var(--pad); 
-  margin-right: var(--pad-sm);
+  margin: var(--pad-sm);
   border-radius: var(--radius-sm);
   /* box-shadow: 0 10px 30px rgba(0,0,0,0.35); */
 }
-/* top-left & bottom-right */
 .project-card::before,
-.project-card::after {
+.project-card::after,
+.project-card span::before,
+.project-card span::after {
   content: "";
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border: 2px solid var(--c-text-trans);
 }
 
@@ -589,16 +590,34 @@ canvas {
   left: 0;
   border-right: none;
   border-bottom: none;
-  border-radius: 24px 0 0 0;
+  border-radius: 14px 0 0 0;
+}
+
+/* top-right */
+.project-card::after {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 14px 0 0;
+}
+
+/* bottom-left */
+.project-card span::before {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 14px;
 }
 
 /* bottom-right */
-.project-card::after {
+.project-card span::after {
   bottom: 0;
   right: 0;
   border-left: none;
   border-top: none;
-  border-radius: 0 0 24px 0;
+  border-radius: 0 0 14px 0;
 }
 
 /* CONTENT */
