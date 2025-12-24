@@ -568,6 +568,7 @@ canvas {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: start;
   padding: var(--pad-sm); 
   margin: var(--pad-sm);
   border-radius: var(--radius-sm);
@@ -579,9 +580,9 @@ canvas {
 .project-card span::after {
   content: "";
   position: absolute;
-  width: 22px;
-  height: 22px;
-  border: 2px solid var(--c-text-trans);
+  width: 10vmin;
+  height: 10vmin;
+  border: 1px solid var(--c-text-trans);
 }
 /* top-left */
 .project-card::before {
