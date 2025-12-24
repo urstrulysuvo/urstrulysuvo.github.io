@@ -223,7 +223,7 @@ canvas {
 .profile-view {
   flex: 12;
   display: grid;
-  height: 91%;
+  height: 89%;
   width: auto;
   grid-template-columns: 1fr;
   grid-template-rows: 9fr 2fr;
@@ -423,10 +423,10 @@ canvas {
 
 
 /* ------- SKILLS PAGE ------- */
-.skill-view {
+.common-view {
   flex: 12;
   display: flex;
-  height: 91%;
+  height: 89%;
   flex-direction: column;
   gap: var(--gap);
 }
@@ -492,7 +492,7 @@ canvas {
   background: var(--c-bg-neg);
   border-radius: var(--radius-sm);
 }
-.skills-box {
+.scroll-box {
   height: 100%;
   /* margin: var(--gap-sm) 0 var(--gap) 0; */
   width: auto;
@@ -500,14 +500,14 @@ canvas {
   overflow-y: auto;
   scroll-behavior: smooth;
 }
-.skills-box::-webkit-scrollbar {
+.scroll-box::-webkit-scrollbar {
   width: 4px;
 }
-.skills-box::-webkit-scrollbar-track {
+.scroll-box::-webkit-scrollbar-track {
   background: transparent;
   padding: var(--gap-sm);
 }
-.skills-box::-webkit-scrollbar-thumb {
+.scroll-box::-webkit-scrollbar-thumb {
   background: var(--c-text-neg);
   border-radius: 5px;
 }
@@ -549,6 +549,87 @@ canvas {
 
 
 
+/* ------- PROJECTS PAGE ------- */
+.projects-scroll-wrap {
+  position: relative;
+  height: 100%;
+  padding: 0 var(--gap-sm) 0 0;
+  /* background: var(--c-bg-neg); */
+  border-radius: var(--radius-sm);
+}
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--pad); 
+  border-radius: var(--radius-sm);
+  background: var(--c-bg-neg);
+  color: var(--c-text-main);
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.35); */
+}
+
+/* CONTENT */
+.project-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.project-title {
+  font-size: var(--fs-lg);
+  color: var(--c-text-main);
+  font-weight: 600;
+}
+
+.project-desc {
+  font-size: var(--fs-md);
+  color: var(--c-text-muted);
+}
+
+/* TECH STACK */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
+}
+
+.tech-stack span {
+  font-size: var(--fs-sm);
+  padding: var(--pad-sm);
+  border-radius: var(--radius);
+  background: var(--c-bg-neg);
+  color: var(--c-text-main);
+}
+
+/* FLOATING ARROW BUTTON */
+.github-btn {
+  position: absolute;
+  bottom: var(--pad-sm);
+  right: var(--pad-sm);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--c-bg-neg);
+  color: var(--c-text-neg);
+  text-decoration: none;
+  font-size: 20px;
+
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.github-btn:hover {
+  background: var(--c-bg);
+  transform: translateX(4px);
+}
+
+
+
 
 
 
@@ -567,7 +648,7 @@ canvas {
   .port-card {
     height: 90%;
     flex-wrap: nowrap;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 2fr 5fr;
     grid-template-rows: 2fr 3fr;
     grid-template-areas:  "box-1 box-2"
                           "box-3 box-3";
@@ -649,7 +730,7 @@ canvas {
     gap: var(--gap);
   }
   .circle{    
-    --size: calc(0.45 * var(--avatar-size));
+    --size: calc(0.4 * var(--avatar-size));
   }
   .skills-scroll-wrap{
     flex:5;
