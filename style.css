@@ -555,13 +555,18 @@ canvas {
   display: flex;
   height: 89%;
   flex-direction: column;
-  gap: var(--gap);
 }
 .projects-scroll-wrap {
   position: relative;
+  margin-right: calc(-0.5 * var(--pad-lg));
   height: 100%;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
   overflow: hidden;
+}
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
 .project-card {
   position: relative;
@@ -570,7 +575,7 @@ canvas {
   justify-content: space-between;
   align-items: start;
   padding: var(--pad-sm); 
-  margin: 0 0 var(--pad-sm) 0;
+  margin-right: var(--gap);
   border-radius: var(--radius-sm);
   background: var(--c-bg-neg);
   /* box-shadow: 0 10px 30px rgba(0,0,0,0.35); */
@@ -615,7 +620,7 @@ canvas {
 .tech-stack span {
   font-size: var(--fs-sm);
   padding: var(--gap-sm) var(--gap);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   background: var(--c-bg-neg);
   color: var(--c-text-main);
 }
