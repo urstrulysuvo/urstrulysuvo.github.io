@@ -1,3 +1,12 @@
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  preloader.classList.add("hide");
+
+  setTimeout(() => {
+    preloader.remove();
+  }, 700);
+});
+
 
 /* TOGGLE THEME */
 const toggle = document.getElementById("toggleTheme");
