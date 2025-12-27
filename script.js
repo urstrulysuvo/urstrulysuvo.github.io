@@ -7,32 +7,68 @@
 //   }, 700);
 // });
 
+
+
 const preloader = document.getElementById("preloader");
-const text = document.getElementById("loader-text");
 
-let loaded = false;
+const MIN_TIME = 2000; // 3 seconds
+const MAX_TIME = 4000; // safety timeout
 
-// Normal success case
-window.addEventListener("load", () => {
-  loaded = true;
-  hideLoader();
-});
+const startTime = Date.now();
+let pageLoaded = false;
 
-// Failsafe timeout (e.g. 6 seconds)
-setTimeout(() => {
-  if (!loaded) {
-    text.textContent = "Slow network… loading anyway";
-    preloader.classList.add("error");
+function tryHideLoader() {
+  const elapsed = Date.now() - startTime;
 
-    // Force hide after message
-    setTimeout(hideLoader, 2000);
+  if (pageLoaded && elapsed >= MIN_TIME) {
+    hideLoader();
   }
-}, 6000);
+}
 
 function hideLoader() {
   preloader.classList.add("hide");
   setTimeout(() => preloader.remove(), 700);
 }
+
+// Page fully loaded
+window.addEventListener("load", () => {
+  pageLoaded = true;
+  tryHideLoader();
+});
+
+// Force hide even if load never fires
+setTimeout(() => {
+  hideLoader();
+}, MAX_TIME);
+
+
+
+// const preloader = document.getElementById("preloader");
+// const text = document.getElementById("loader-text");
+
+// let loaded = false;
+
+// // Normal success case
+// window.addEventListener("load", () => {
+//   loaded = true;
+//   hideLoader();
+// });
+
+// // Failsafe timeout (e.g. 6 seconds)
+// setTimeout(() => {
+//   if (!loaded) {
+//     text.textContent = "Slow network… loading anyway";
+//     preloader.classList.add("error");
+
+//     // Force hide after message
+//     setTimeout(hideLoader, 2000);
+//   }
+// }, 6000);
+
+// function hideLoader() {
+//   preloader.classList.add("hide");
+//   setTimeout(() => preloader.remove(), 700);
+// }
 
 
 /* TOGGLE THEME */
