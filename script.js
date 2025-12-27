@@ -1,10 +1,38 @@
+// window.addEventListener("load", () => {
+//   const preloader = document.getElementById("preloader");
+//   preloader.classList.add("hide");
+
+//   setTimeout(() => {
+//     preloader.remove();
+//   }, 700);
+// });
+
+const preloader = document.getElementById("preloader");
+const text = document.getElementById("loader-text");
+
+let loaded = false;
+
+// Normal success case
 window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  preloader.classList.add("hide");
-  setTimeout(() => {
-    preloader.remove();
-  }, 700);
+  loaded = true;
+  hideLoader();
 });
+
+// Failsafe timeout (e.g. 6 seconds)
+setTimeout(() => {
+  if (!loaded) {
+    text.textContent = "Slow network… loading anyway";
+    preloader.classList.add("error");
+
+    // Force hide after message
+    setTimeout(hideLoader, 2000);
+  }
+}, 6000);
+
+function hideLoader() {
+  preloader.classList.add("hide");
+  setTimeout(() => preloader.remove(), 700);
+}
 
 
 /* TOGGLE THEME */
