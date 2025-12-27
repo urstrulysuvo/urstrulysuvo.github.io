@@ -694,7 +694,7 @@ canvas {
   text-align: center;
   justify-content: center;
   padding: var(--pad);
-  height: 91%;
+  height: 89%;
   border-radius: var(--radius-sm);
   background: var(--c-bg-neg);
   animation: fadeIn 0.8s ease;
