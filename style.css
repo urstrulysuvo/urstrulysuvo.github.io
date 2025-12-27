@@ -688,6 +688,36 @@ canvas {
 
 
 /* ------- PUBLISHED APPS PAGE ------- */
+.empty-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: var(--pad);
+  height: 89%;
+  border-radius: var(--radius-sm);
+  background: var(--c-bg-neg);
+  animation: fadeIn 0.8s ease;
+}
+
+.app-icon {
+  font-size: calc(3 * var(--nav-icon-size));
+  color: var(--c-accent);
+  margin-bottom: var(--gap-lg);
+  animation: float 2.8s ease-in-out infinite;
+}
+
+.empty-card h2 {
+  color: var(--c-text-main);
+  font-size: var(--fs-xl);
+  margin-bottom: 10px;
+}
+
+.empty-card p {
+  color: var(--c-text-muted);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+}
 
 
 
