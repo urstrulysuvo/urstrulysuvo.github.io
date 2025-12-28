@@ -236,11 +236,34 @@ canvas {
   z-index: 4;
 }
 .theme-toggle:hover { transform:scale(1.1); }
+/* .color-bars{
+  top: 0;
+  left: calc(var(--toggle-bg-size) + var(--gap-sm));
+  position: fixed;
+  display:flex;
+  transform: rotate(135deg);
+  transform-origin: left top;
+}
+.bar{
+  width: calc(var(--toggle-bg-size) / 1.9);
+  height:var(--gap);
+}
+.bar.red{
+  background:#ff5f5f;
+  border-radius: 0;
+}
+.bar.yellow{
+  background:#f5c542;
+  border-radius: 0;
+}
+.bar.green{
+  background:#4cd964;
+  border-radius: 0;
+} */
 
 
 
 /* ------- PROFILE PAGE ------- */
-
 /* SUBSECTION */
 .subsection {
   position: fixed;
@@ -448,7 +471,6 @@ canvas {
   width: var(--radius);
   height: var(--radius);
   background: var(--c-bg-neg);
-  /* font-weight: bold; */
   -webkit-mask:
     radial-gradient(circle at top left,
       transparent var(--radius),
@@ -617,7 +639,6 @@ canvas {
   background: var(--c-bg-neg);
   /* box-shadow: 0 10px 30px rgba(0,0,0,0.35); */
 }
-
 /* CONTENT */
 .project-body {
   display: flex;
@@ -680,11 +701,11 @@ canvas {
 
   transition: transform 0.2s ease, background 0.2s ease;
 }
-
 .github-btn:hover {
   background: var(--c-border);
   transform: translateX(4px);
 }
+
 
 
 /* ------- PUBLISHED APPS PAGE ------- */
@@ -694,25 +715,22 @@ canvas {
   text-align: center;
   justify-content: center;
   padding: var(--pad);
-  height: 89%;
+  height: 90%;
   border-radius: var(--radius-sm);
   background: var(--c-bg-neg);
   animation: fadeIn 0.8s ease;
 }
-
 .app-icon {
   font-size: calc(3 * var(--nav-icon-size));
   color: var(--c-accent);
   margin-bottom: var(--gap-lg);
   animation: float 2.8s ease-in-out infinite;
 }
-
 .empty-card h2 {
   color: var(--c-text-main);
   font-size: var(--fs-xl);
   margin-bottom: 10px;
 }
-
 .empty-card p {
   color: var(--c-text-muted);
   font-size: var(--fs-md);
@@ -770,11 +788,11 @@ canvas {
     -webkit-mask:
       radial-gradient(circle at bottom left,
         transparent var(--radius),
-        black calc(var(--radius) + 1px));
+        black var(--radius));
     mask:
       radial-gradient(circle at bottom left,
         transparent var(--radius),
-        black calc(var(--radius) + 1px));
+        black var(--radius));
   }
   .navbar::after {
     content: "";
