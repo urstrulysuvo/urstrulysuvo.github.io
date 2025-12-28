@@ -23,6 +23,11 @@
     <button class="theme-toggle" id="toggleTheme">
       <i id="toggleIcon" class="fa-regular fa-moon"></i>
     </button>
+    <div class="color-bars">
+      <div class="bar red"></div>
+      <div class="bar yellow"></div>
+      <div class="bar green"></div>
+    </div>
 
     <!-- SECTIONS -->
     <div class="hero-layout">
@@ -266,12 +271,10 @@
                     <div class="project-card">
                       <div class="project-body">
                         <h3 class="project-title">Stock Market Forecasting</h3>
-
                         <p class="project-desc">
                           An ANN-based model to predict stock price movement using historical market data with improved
                           accuracy.
                         </p>
-
                         <div class="tech-stack">
                           <span>Python</span>
                           <span>ANN</span>
@@ -279,7 +282,6 @@
                           <span>Pandas</span>
                         </div>
                       </div>
-
                       <!-- Floating GitHub Arrow -->
                       <a href="https://github.com/your-repo" target="_blank" class="github-btn"
                         aria-label="View on GitHub">
@@ -295,16 +297,15 @@
         <section id="apps" class="page">
           <div class="subsection">
             <div class="title">Published Apps</div>
-            <div class="empty-card">  
+            <div class="empty-card">
               <div class="app-icon">
-      <i class="fa-solid fa-mobile-screen-button"></i>
-    </div>
-
-    <h2>No Apps Published Yet</h2>
-    <p>
-      I’m currently working on exciting applications.<br>
-      They’ll be available here soon.
-    </p>            
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <h2>No Apps Published Yet</h2>
+              <p>
+                I’m currently working on exciting applications.<br>
+                They’ll be available here soon.
+              </p>
             </div>
           </div>
         </section>
@@ -316,21 +317,16 @@
         <button class="nav-link active" onclick="showSection('profile', this)">
           <i class="fa-solid fa-user"></i>
         </button>
-
         <button class="nav-link" onclick="showSection('skills', this)">
           <i class="fa-solid fa-laptop-code"></i>
         </button>
-
         <button class="nav-link" onclick="showSection('projects', this)">
           <i class="fa-solid fa-folder-open"></i>
         </button>
-
         <button class="nav-link" onclick="showSection('apps', this)">
           <i class="fa-solid fa-layer-group"></i>
         </button>
-
       </nav>
-
     </div>
   </div>
   <script src="script.js"></script>
