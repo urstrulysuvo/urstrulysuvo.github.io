@@ -1,57 +1,57 @@
 /* BINARY BACKGROUND */
-const canvas = document.getElementById('c');
-const ctx = canvas.getContext('2d');
+// const canvas = document.getElementById('c');
+// const ctx = canvas.getContext('2d');
 
-let fontSize = 18;
-let cols, drops;
-const charSet = ["0","1"];
+// let fontSize = 18;
+// let cols, drops;
+// const charSet = ["0","1"];
 
-function resizeBg() {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
-  ctx.font = fontSize + "px monospace";
-  cols = Math.floor(innerWidth / fontSize);
-  drops = Array(cols).fill(0).map(() => ({
-    y: Math.random() * -200,
-    speed: 1 + Math.random() * 1.2
-  }));
-}
+// function resizeBg() {
+//   canvas.width = innerWidth;
+//   canvas.height = innerHeight;
+//   ctx.font = fontSize + "px monospace";
+//   cols = Math.floor(innerWidth / fontSize);
+//   drops = Array(cols).fill(0).map(() => ({
+//     y: Math.random() * -200,
+//     speed: 1 + Math.random() * 1.2
+//   }));
+// }
 
-function drawBg() {
-  const isDark = document.body.classList.contains("dark");
-  ctx.fillStyle = isDark ? "#000" : "#fff";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+// function drawBg() {
+//   const isDark = document.body.classList.contains("dark");
+//   ctx.fillStyle = isDark ? "#000" : "#fff";
+//   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  drops.forEach((drop, i) => {
-    const x = i * fontSize;
-    const trail = 5 + Math.floor(Math.random() * 6);
+//   drops.forEach((drop, i) => {
+//     const x = i * fontSize;
+//     const trail = 5 + Math.floor(Math.random() * 6);
 
-    for (let t = 0; t < trail; t++) {
-      const yPos = drop.y - t * fontSize;
-      if (yPos < -fontSize || yPos > canvas.height) continue;
+//     for (let t = 0; t < trail; t++) {
+//       const yPos = drop.y - t * fontSize;
+//       if (yPos < -fontSize || yPos > canvas.height) continue;
 
-      let alpha = 1 - t / (trail + 1);
+//       let alpha = 1 - t / (trail + 1);
 
-      ctx.fillStyle = isDark
-        ? `rgba(255,255,255,${alpha})`
-        : `rgba(20,20,20,${alpha})`;
+//       ctx.fillStyle = isDark
+//         ? `rgba(255,255,255,${alpha})`
+//         : `rgba(20,20,20,${alpha})`;
 
-      ctx.fillText(charSet[Math.random() < 0.5 ? 0 : 1], x, yPos);
-    }
+//       ctx.fillText(charSet[Math.random() < 0.5 ? 0 : 1], x, yPos);
+//     }
 
-    drop.y += drop.speed * fontSize * 0.3;
-    if (drop.y > canvas.height + 50) {
-      drop.y = Math.random() * -200;
-      drop.speed = 1 + Math.random() * 1.2;
-    }
-  });
+//     drop.y += drop.speed * fontSize * 0.3;
+//     if (drop.y > canvas.height + 50) {
+//       drop.y = Math.random() * -200;
+//       drop.speed = 1 + Math.random() * 1.2;
+//     }
+//   });
 
-  requestAnimationFrame(drawBg);
-}
+//   requestAnimationFrame(drawBg);
+// }
 
-resizeBg();
-drawBg();
-onresize = resizeBg;
+// resizeBg();
+// drawBg();
+// onresize = resizeBg;
 
 
 
@@ -212,3 +212,117 @@ onresize = resizeBg;
 //   canvas.width = innerWidth;
 //   canvas.height = innerHeight;
 // });
+
+
+
+
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d");
+
+let w, h;
+function resize(){
+  w = canvas.width = innerWidth;
+  h = canvas.height = innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+/* EXTENSION ZONE (important) */
+const PADDING = 260;
+
+/* SETTINGS */
+const MAX_DIST = 170;
+const NODE_COUNT = Math.min(300, (w * h) / 2000);
+
+/* CREATE NODES (beyond viewport) */
+const nodes = Array.from({ length: NODE_COUNT }, () => ({
+  x: Math.random() * (w + PADDING * 2) - PADDING,
+  y: Math.random() * (h + PADDING * 2) - PADDING,
+  vx: (Math.random() - 0.5) * 0.08,
+  vy: (Math.random() - 0.5) * 0.08,
+  r: Math.random() * 1.4 + 0.6,
+  dark: Math.random() > 0.65
+}));
+
+function cssVar(v){
+  return getComputedStyle(document.body).getPropertyValue(v);
+}
+
+/* FADE BASED ON DISTANCE FROM VIEWPORT */
+function viewportFade(x, y){
+  const fx = Math.min(
+    Math.max(x, 0),
+    w
+  );
+  const fy = Math.min(
+    Math.max(y, 0),
+    h
+  );
+
+  const d = Math.hypot(x - fx, y - fy);
+  return Math.max(0, 1 - d / PADDING);
+}
+
+function draw(){
+  ctx.clearRect(0,0,w,h);
+  const isDark = document.body.classList.contains("dark");
+
+  /* LINES */
+  for(let i=0;i<nodes.length;i++){
+    for(let j=i+1;j<nodes.length;j++){
+      const a = nodes[i];
+      const b = nodes[j];
+      const dx = a.x - b.x;
+      const dy = a.y - b.y;
+      const dist = Math.hypot(dx, dy);
+
+      if(dist < MAX_DIST){
+        const fade =
+          (1 - dist / MAX_DIST) *
+          viewportFade((a.x + b.x)/2, (a.y + b.y)/2);
+
+        if(fade <= 0) continue;
+
+        ctx.strokeStyle =
+          isDark
+            ? cssVar("--line-dark")
+            : cssVar("--line-light");
+
+        ctx.globalAlpha = fade;
+        ctx.lineWidth = isDark ? 0.5 : 0.6;
+
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+      }
+    }
+  }
+
+  ctx.globalAlpha = 1;
+
+  /* NODES */
+  nodes.forEach(n => {
+    n.x += n.vx;
+    n.y += n.vy;
+
+    if(n.x < -PADDING || n.x > w + PADDING) n.vx *= -1;
+    if(n.y < -PADDING || n.y > h + PADDING) n.vy *= -1;
+
+    const fade = viewportFade(n.x, n.y);
+    if(fade <= 0) return;
+
+    ctx.globalAlpha = fade;
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+    ctx.fillStyle = n.dark
+      ? cssVar("--node-dark")
+      : cssVar("--node-light");
+    ctx.fill();
+  });
+
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(draw);
+}
+
+draw();
