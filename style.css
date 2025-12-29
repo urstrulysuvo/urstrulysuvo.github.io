@@ -19,8 +19,8 @@ body::-webkit-scrollbar {
 
 body {
   font-family: "Inter", sans-serif;
-  background: #fff;
-  color: #fff;
+  background: var(--bg);
+  color: var(--bg);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -30,6 +30,12 @@ body.lock-scroll {
 }
 
 :root {
+  --bg: #ffffff;
+  --node-dark: rgba(0,0,0,.9);
+  --node-light: rgba(0,0,0,.35);
+  --line-dark: rgba(0,0,0,.85);
+  --line-light: rgba(0,0,0,.25);
+
   --pad: 4vw;
   --pad-sm: calc(var(--pad) / 2);
   --pad-lg: calc(var(--pad) * 1.5);
@@ -71,6 +77,11 @@ body.lock-scroll {
 }
 
 body.dark {
+  --bg: #000;
+  --node-dark: rgba(255,255,255,.9);
+  --node-light: rgba(255,255,255,.35);
+  --line-dark: rgba(255,255,255,.85);
+  --line-light: rgba(255,255,255,.25);
   --c-bg: rgba(0,0,0,0.18);
   --c-bg-neg: rgba(255,255,255,0.08);
   --c-bg-neg-sec: rgba(255,255,255,0.04);
