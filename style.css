@@ -30,11 +30,9 @@ body.lock-scroll {
 }
 
 :root {
-  --bg: #ffffff;
-  --node-dark: rgba(0,0,0,.9);
-  --node-light: rgba(0,0,0,.35);
-  --line-dark: rgba(0,0,0,.85);
-  --line-light: rgba(0,0,0,.25);
+  --bg: #fff;
+  --node-color: #050505;
+  --line-color: #282828;
 
   --pad: 4vw;
   --pad-sm: calc(var(--pad) / 2);
@@ -78,10 +76,8 @@ body.lock-scroll {
 
 body.dark {
   --bg: #000;
-  --node-dark: rgba(255,255,255,.9);
-  --node-light: rgba(255,255,255,.35);
-  --line-dark: rgba(255,255,255,.85);
-  --line-light: rgba(255,255,255,.25);
+  --node-color: #f5f5f5;
+  --line-color: #c5c5c5;
   --c-bg: rgba(0,0,0,0.18);
   --c-bg-neg: rgba(255,255,255,0.08);
   --c-bg-neg-sec: rgba(255,255,255,0.04);
