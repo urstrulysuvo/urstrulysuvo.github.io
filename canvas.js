@@ -27,14 +27,14 @@ function startBinaryBackground() {
     stopCanvas();
     currentEngine = "binary";
 
-    let fontSize = 16;
+    let fontSize = Math.min(canvas.width, canvas.height) * 0.025;
     let cols, drops;
     const charSet = ["0","1"];
 
     function resizeBg() {
     canvas.width = innerWidth;
     canvas.height = innerHeight;
-    ctx.font = fontSize + "px monospace";
+    ctx.font = `${fontSize}px monospace`;;
     cols = Math.floor(innerWidth / fontSize);
     drops = Array(cols).fill(0).map(() => ({
     y: Math.random() * -200,
@@ -44,7 +44,7 @@ function startBinaryBackground() {
 
     function drawBg() {
     const isDark = document.body.classList.contains("dark");
-    ctx.fillStyle = isDark ? "#000" : "#fff";
+    ctx.fillStyle = cssVar("--bg");
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     drops.forEach((drop, i) => {
@@ -240,12 +240,34 @@ function startParticleBackground() {
 }
 
 function setBackground(type) {
+  // ===== BACKGROUND SWITCH (your existing logic can stay here) =====
   if (type === "bg-1") startBinaryBackground();
   if (type === "bg-2") startNetworkBackground();
   if (type === "bg-3") startParticleBackground();
 
   localStorage.setItem("canvasBackground", type);
+
+  // ===== ACCENT COLOR SWITCH =====
+  const btn = document.querySelector(
+    `.mac-btn[onclick="setBackground('${type}')"]`
+  );
+
+  if (btn && btn.dataset.accent) {
+    document.documentElement.style.setProperty(
+      "--c-accent",
+      btn.dataset.accent
+    );
+
+    // persist accent
+    localStorage.setItem("accentColor", btn.dataset.accent);
+  }
 }
 
 const saved = localStorage.getItem("canvasBackground") || "bg-1";
 setBackground(saved);
+
+// Restore accent
+const savedAccent = localStorage.getItem("accentColor");
+if (savedAccent) {
+  document.documentElement.style.setProperty("--c-accent", savedAccent);
+}
