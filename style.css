@@ -268,7 +268,7 @@ canvas {
 }
 
 .mac-btn {
-  width: var(--fs-md);
+  width: var(--fs-sm);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   cursor: pointer;
