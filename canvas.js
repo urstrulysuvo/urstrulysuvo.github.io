@@ -27,7 +27,7 @@ function startBinaryBackground() {
     stopCanvas();
     currentEngine = "binary";
 
-    let fontSize = Math.min(canvas.width, canvas.height) * 0.025;
+    let fontSize = Math.min(canvas.width, canvas.height) * 0.026;
     let cols, drops;
     const charSet = ["0","1"];
 
