@@ -88,7 +88,7 @@ body.dark {
   --c-border: rgba(255,255,255,0.25);
 }
 
-body.bg-1 {
+/* body.bg-1 {
   --c-accent: #ff5f56;
 }
 
@@ -98,7 +98,7 @@ body.bg-2 {
 
 body.bg-3 {
   --c-accent: #27c93f;
-}
+} */
 
 /* CANVAS */
 canvas {
@@ -277,14 +277,13 @@ canvas {
 }
 
 .mac-btn.red    { background: #ff5f56; }
-.mac-btn.yellow { background: #ffbd2e; }
-.mac-btn.green  { background: #27c93f; }
+.mac-btn.yellow { background: #FFBD2E; }
+.mac-btn.green  { background: #27C93F; }
 
 .mac-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 6px rgba(255,255,255,0.25);
 }
-
 
 
 
