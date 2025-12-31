@@ -19,16 +19,16 @@ function hideLoader() {
 /* TOGGLE THEME */
 const toggle = document.getElementById("toggleTheme");
 toggle.onclick = () => {
-    const icon = document.getElementById("toggleIcon");
-    
-    // Toggle Font Awesome classes
-    if (icon.classList.contains("fa-moon")) {
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun", "active");
-    } else {
-        icon.classList.remove("fa-sun", "active");
-        icon.classList.add("fa-moon");
-    }
+  const icon = document.getElementById("toggleIcon");
+
+  // Toggle Font Awesome classes
+  if (icon.classList.contains("fa-moon")) {
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun", "active");
+  } else {
+    icon.classList.remove("fa-sun", "active");
+    icon.classList.add("fa-moon");
+  }
   document.body.classList.toggle("dark");
 };
 
@@ -99,3 +99,4 @@ function resetReveal() {
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
+
