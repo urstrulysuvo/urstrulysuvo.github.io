@@ -1064,9 +1064,9 @@ canvas {
     --fs-xs: 1vw;
     --fs-sm: 1.4vw;
     --fs-md: 1.8vw;
-    --fs-lg: 2.1vw;
-    --fs-xl: 2.6vw;
-    --fs-xxl: 3Vw;
+    --fs-lg: 2vw;
+    --fs-xl: 2.4vw;
+    --fs-xxl: 2.7Vw;
   }
 }
 
@@ -1092,7 +1092,7 @@ canvas {
     --fs-sm: 2.5vh;
     --fs-md: 3.2vh;
     --fs-lg: 3.6vh;
-    --fs-xl: 4.5vh;
-    --fs-xxl: 5.2vh;
+    --fs-xl: 4.3vh;
+    --fs-xxl: 5vh;
   }
 }
