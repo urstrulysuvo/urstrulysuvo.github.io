@@ -648,7 +648,7 @@ canvas {
 
 .circle span {
   position: relative;
-  font-size: var(--fs-lg);
+  font-size: clamp(12px, var(--fs-lg), var(--fs-lg));
   font-weight: bold;
   color: var(--c-text-neg);
 }
@@ -798,6 +798,7 @@ canvas {
 
 /* TECH STACK */
 .tech-stack {
+  width: 85%;
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap-sm);
