@@ -776,7 +776,7 @@ canvas {
   padding-bottom: var(--gap);
   font-size: var(--fs-lg);
   color: var(--c-text-main);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .project-title::after {
@@ -792,6 +792,7 @@ canvas {
 
 .project-desc {
   font-size: var(--fs-md);
+  text-align: justify;
   color: var(--c-text-muted);
 }
 
@@ -1064,9 +1065,9 @@ canvas {
     --fs-xs: 1vw;
     --fs-sm: 1.4vw;
     --fs-md: 1.8vw;
-    --fs-lg: 2vw;
-    --fs-xl: 2.4vw;
-    --fs-xxl: 2.7Vw;
+    --fs-lg: 2.1vw;
+    --fs-xl: 2.6vw;
+    --fs-xxl: 3Vw;
   }
 }
 
@@ -1092,7 +1093,7 @@ canvas {
     --fs-sm: 2.5vh;
     --fs-md: 3.2vh;
     --fs-lg: 3.6vh;
-    --fs-xl: 4.3vh;
-    --fs-xxl: 5vh;
+    --fs-xl: 4.5vh;
+    --fs-xxl: 5.2vh;
   }
 }
