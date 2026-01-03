@@ -723,6 +723,12 @@ canvas {
   }
 }
 
+.skill-set {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: var(--gap);
+}
+
 
 
 /* ------- PROJECTS PAGE ------- */
